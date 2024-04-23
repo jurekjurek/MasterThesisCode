@@ -31,7 +31,9 @@ from lambeq.backend.quantum import (
     quantum,
     qubit,
     Rotation,
-    Rx, Ry, Rz
+    Rx, Ry, Rz, 
+    CRy, 
+    X
 )
 
 from lambeq import CircuitAnsatz
@@ -50,6 +52,81 @@ parser = BobcatParser(verbose='text')
 
 
 '''
+Functions that we need for the Ansatz 
+'''
+
+def noun_ansatz(paramString: str, parameterDict, circuitt):
+    '''
+    this function returns a 2-qubit circuit encoding the four dimensional vector arr 
+    '''
+    word, dagger = GetWordFromParam(paramString)
+    print('the word is:  ', word)
+    print('is it daggered? ', dagger)
+
+    arr = parameterDict[word]
+
+    print('and the parameters are: ', arr)
+
+    if len(arr) != 4: 
+        print('Error, we need a four dimensional vector')
+    
+    # normalize vector 
+    arr = arr / np.linalg.norm(arr)
+
+    print('vector to amplitude encode: ', arr)
+
+    a1 = np.linalg.norm(arr[0:2])
+    a2 = np.linalg.norm(arr[2:])
+    phi1 = np.arccos(a1)/np.pi
+
+    # fix issues with rotations
+    rot1 = arr[0:2]/a1
+    phi2_cos = np.arccos(rot1[0])/np.pi
+    phi2_sin = np.arcsin(rot1[1])/np.pi
+    if not np.sign(phi2_cos) == np.sign(phi2_sin):
+        phi2_cos *= -1
+    rot2 = arr[2: ]/a2
+    phi3_cos = np.arccos(rot2[0])/np.pi
+    phi3_sin = np.arcsin(rot2[1])/np.pi
+    if not np.sign(phi3_cos) == np.sign(phi3_sin):
+        phi3_cos *= -1
+
+    # print('is this executed succesfully?? The parameters are: ', phi1)
+
+    partToAdd = Ry(phi1) @ Id(1) >> CRy(phi3_cos) >> X @ Id(1) >> CRy(phi2_cos) >> X @ Id(1)
+
+    # if the word is upside down, we flip the whole circuit 
+    if dagger:
+        circuitt >>= partToAdd.dagger()
+
+    # if the word is not upside down, we just append the circuit as is 
+    else: 
+        circuitt >>= partToAdd
+
+    # making sure the amplitude encoding works as intended 
+
+    # circuit.draw()
+    # amplitude = circuit.eval()
+    # print('the amplitude is: ', amplitude)
+    # probability = abs(amplitude) ** 2   
+
+    # print('the probability is: ', probability)
+
+    # return circuit >> Ry(phi1) @ circuit.id(1) >> CRy(phi3_cos) >> X @ circuit.id(1) >> CRy(phi2_cos) >> X @ circuit.id(1)
+    return circuitt
+
+def GetWordFromParam(param: str):
+    word = param.split('_')[0] 
+
+    if '†' in word: 
+        dagger = True 
+        word = word.replace('†', '')
+    else: 
+        dagger = False 
+    
+    return word, dagger
+
+'''
 General Ansatz class that we changed for our purpose
 '''
 
@@ -62,6 +139,7 @@ class CircuitAnsatz(BaseAnsatz):
                  n_single_qubit_params: int,
                  circuit: Callable[[int, np.ndarray], Circuit],
                  nounParams: np.ndarray, 
+                 parameterDict: dict, 
                  discard: bool = False,
                  single_qubit_rotations: list[Type[Rotation]] | None = None,
                  postselection_basis: Circuit = computational_basis) -> None:
@@ -98,6 +176,7 @@ class CircuitAnsatz(BaseAnsatz):
         self.n_single_qubit_params = n_single_qubit_params
         self.circuit = circuit
         self.nounParams = nounParams
+        self.parameterDict = parameterDict
         if len(nounParams) != n_single_qubit_params: 
             print('The number of noun parameters does not fit the number of single qubit operators. ')
         self.discard = discard
@@ -198,7 +277,7 @@ class CircuitAnsatz(BaseAnsatz):
 This is a child of CircuitAnsatz, executing the amplitude encoding
 '''
 
-class IQPAmplitudeEncode(CircuitAnsatz):
+class IQPAmplitudeEncode2QB(CircuitAnsatz):
     """Instantaneous Quantum Polynomial ansatz.
 
     An IQP ansatz interleaves layers of Hadamard gates with diagonal
@@ -213,6 +292,7 @@ class IQPAmplitudeEncode(CircuitAnsatz):
                  ob_map: Mapping[Ty, int],
                  n_layers: int,
                  nounParams: np.ndarray,
+                 parameterDict: dict, 
                  n_single_qubit_params: int = 3,
                  discard: bool = False) -> None:
         """Instantiate an IQP ansatz.
@@ -235,6 +315,7 @@ class IQPAmplitudeEncode(CircuitAnsatz):
                          n_single_qubit_params,
                          self.circuit,
                          nounParams, 
+                         parameterDict, 
                          discard,
                          [Rx, Rz])
 
@@ -244,6 +325,9 @@ class IQPAmplitudeEncode(CircuitAnsatz):
 
 
     def circuit(self, n_qubits: int, params: np.ndarray) -> Circuit:
+
+        # when we amplitude encode the nouns, we don't want to draw the final Hadamard layer 
+        addH = True
         
         if n_qubits == 1:
             # circuit = Rx(params[0]) >> Rz(params[1]) >> Rx(params[2])
@@ -253,14 +337,40 @@ class IQPAmplitudeEncode(CircuitAnsatz):
             hadamards = Id().tensor(*(n_qubits * [H]))
             print('params in circuitfunction:', params)
             for thetas in params:
+
+                # print('first draw of circuit: ')
+                # circuit.draw()
                 print('thetas: ', thetas)
+                if '_n_' in str(thetas[0]): 
+                    print('we have to do somehting')
+                    # continue 
+                    circuit = noun_ansatz(str(thetas[0]), self.parameterDict, circuitt=circuit)
+
+                    # remove the used noun parameters 
+                    # self.nounParams = self.nounParams[4:]
+
+                    addH = False
+                    continue
                 rotations = Id(n_qubits).then(*(
                     Id(i) @ CRz(thetas[i]) @ Id(n_qubits - 2 - i)
                     for i in range(n_qubits - 1)))
                 circuit >>= hadamards >> rotations
-            if self.n_layers > 0:  # Final layer of Hadamards
+                # print('after hadamard and rotations: ')
+                # circuit.draw()
+
+            if self.n_layers > 0 and addH == True:  # Final layer of Hadamards
                 circuit >>= hadamards
 
         return circuit  # type: ignore[return-value]
+
+
+
+
+
+
+
+
+
+
 
 
