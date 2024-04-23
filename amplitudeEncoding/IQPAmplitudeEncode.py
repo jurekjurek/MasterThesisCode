@@ -70,10 +70,19 @@ def noun_ansatz(paramString: str, parameterDict, circuitt):
     if len(arr) != 4: 
         print('Error, we need a four dimensional vector')
     
+    if arr == [0,0,0,0]:
+        return circuitt
+
+    for i in range(len(arr)): 
+        if arr[i] == 0: 
+            # avoid nan, I suppose? 
+            arr[i] = 1e-10
+
     # normalize vector 
     arr = arr / np.linalg.norm(arr)
 
     print('vector to amplitude encode: ', arr)
+
 
     a1 = np.linalg.norm(arr[0:2])
     a2 = np.linalg.norm(arr[2:])
