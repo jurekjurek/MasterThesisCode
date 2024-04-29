@@ -1,0 +1,12 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=green dot] (2) at (-3, 3) {};
+		\node [style=red dot] (3) at (0, 3) {};
+		\node [style=green dot] (4) at (3, 3) {};
+		\node [style=none] (5) at (0, 0) {$=$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [bend right=60, looseness=1.25] (2) to (3);
+		\draw [bend right=60, looseness=1.25] (3) to (4);
+	\end{pgfonlayer}
+\end{tikzpicture}
