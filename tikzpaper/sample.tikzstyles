@@ -6,5 +6,6 @@
 % Node styles
 \tikzstyle{red dot}=[fill=red, draw=black, shape=circle]
 \tikzstyle{green dot}=[fill=green, draw=black, shape=circle]
+\tikzstyle{medium box}=[fill=white, draw=black, shape=rectangle, minimum width=0.75cm, minimum height=1cm]
 
 % Edge styles
