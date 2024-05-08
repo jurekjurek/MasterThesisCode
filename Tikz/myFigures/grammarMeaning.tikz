@@ -1,0 +1,68 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-7.75, 1) {};
+		\node [style=none] (1) at (-5.75, 1) {};
+		\node [style=none] (2) at (-6.75, 2) {};
+		\node [style=none] (3) at (-5.5, 1) {};
+		\node [style=none] (4) at (-2.5, 1) {};
+		\node [style=none] (5) at (-4, 2.25) {};
+		\node [style=none] (6) at (-1.25, 2) {};
+		\node [style=none] (7) at (-0.25, 1) {};
+		\node [style=none] (8) at (-2.25, 1) {};
+		\node [style=none] (9) at (-4.75, 1) {};
+		\node [style=none] (10) at (-4, 1) {};
+		\node [style=none] (11) at (-3.25, 1) {};
+		\node [style=none] (12) at (-1.25, 1) {};
+		\node [style=none] (13) at (-1.25, -0.25) {$N$};
+		\node [style=none] (14) at (-6.75, 1) {};
+		\node [style=none] (15) at (-6.75, -0.25) {$N$};
+		\node [style=none] (16) at (-6.75, -1.25) {};
+		\node [style=none] (17) at (-4.75, -1.25) {};
+		\node [style=none] (20) at (-6.75, 0.25) {};
+		\node [style=none] (21) at (-4.75, 0.25) {};
+		\node [style=none] (22) at (-4, 0.25) {};
+		\node [style=none] (23) at (-3.25, 0.25) {};
+		\node [style=none] (24) at (-1.25, 0.25) {};
+		\node [style=none] (38) at (-4.75, -0.25) {$N$};
+		\node [style=none] (46) at (-4, -0.25) {$S$};
+		\node [style=none] (47) at (-3.25, -0.25) {$N$};
+		\node [style=none] (48) at (-6.75, 3.25) {Alice};
+		\node [style=none] (50) at (-1.25, 3.25) {guitar};
+		\node [style=none] (51) at (-4, 3.25) {plays};
+		\node [style=none] (52) at (-3.25, -1.25) {};
+		\node [style=none] (53) at (-1.25, -1.25) {};
+		\node [style=none] (54) at (-4, -1.25) {};
+		\node [style=none] (55) at (-4, -3) {};
+		\node [style=none] (80) at (-8.25, -0.75) {};
+		\node [style=none] (81) at (0.25, -3.25) {};
+		\node [style=none] (82) at (0.25, -0.75) {};
+		\node [style=none] (83) at (-8.25, -3.25) {};
+		\node [style=none] (84) at (-9, -1.5) {};
+		\node [style=label] (85) at (-12.25, -0.5) {\bf\color{red}grammar};
+		\node [style=none] (86) at (-11.75, -0.75) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=thick] (0.center) to (1.center);
+		\draw [style=thick] (1.center) to (2.center);
+		\draw [style=thick] (2.center) to (0.center);
+		\draw [style=thick] (3.center) to (4.center);
+		\draw [style=thick] (5.center) to (3.center);
+		\draw [style=thick] (5.center) to (4.center);
+		\draw [style=thick] (8.center) to (7.center);
+		\draw [style=thick] (7.center) to (6.center);
+		\draw [style=thick] (6.center) to (8.center);
+		\draw [style=thick, bend left=270, looseness=1.50] (16.center) to (17.center);
+		\draw [style=thick] (14.center) to (20.center);
+		\draw [style=thick] (9.center) to (21.center);
+		\draw [style=thick] (10.center) to (22.center);
+		\draw [style=thick] (11.center) to (23.center);
+		\draw [style=thick] (12.center) to (24.center);
+		\draw [style=thick, bend left=270, looseness=1.50] (52.center) to (53.center);
+		\draw [style=thick] (54.center) to (55.center);
+		\draw [style=boldedge, red] (80.center) to (83.center);
+		\draw [style=boldedge, red] (83.center) to (81.center);
+		\draw [style=boldedge, red] (81.center) to (82.center);
+		\draw [style=boldedge, red] (80.center) to (82.center);
+		\draw [style=pointer edge, red, in=180, out=-90, looseness=0.75] (86.center) to (84.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

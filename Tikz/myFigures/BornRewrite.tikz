@@ -1,0 +1,35 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=kpoint adjoint] (0) at (-2, 0.75) {$\phi$};
+		\node [style=kpoint] (1) at (-2, -0.75) {$\psi$};
+		\node [style=kpoint transpose] (2) at (-3.5, 0.75) {$\phi$};
+		\node [style=kpoint conjugate] (3) at (-3.5, -0.75) {$\psi$};
+		\node [style=none] (4) at (0, 0) {};
+		\node [style=none] (5) at (0, 0) {=};
+		\node [style=kpoint adjoint] (6) at (3.75, 0.75) {$\psi$};
+		\node [style=kpoint] (7) at (3.75, -0.75) {$\phi$};
+		\node [style=kpoint adjoint] (8) at (2, 0.75) {$\phi$};
+		\node [style=kpoint] (9) at (2, -0.75) {$\psi$};
+		\node [style=none] (10) at (6, 0) {=};
+		\node [style=kpoint adjoint] (13) at (8, 0.75) {$\phi$};
+		\node [style=kpoint] (14) at (8, -0.75) {$\psi$};
+		\node [style=kpoint] (15) at (8, 2.5) {$\phi$};
+		\node [style=kpoint adjoint] (16) at (8, -2.5) {$\psi$};
+		\node [style=none] (17) at (9.5, -3) {};
+		\node [style=none] (18) at (9.5, 3) {};
+		\node [style=none] (19) at (8, 3) {};
+		\node [style=none] (20) at (8, -3) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (0) to (1);
+		\draw (2) to (3);
+		\draw (6) to (7);
+		\draw (8) to (9);
+		\draw (13) to (14);
+		\draw [bend left=90] (19.center) to (18.center);
+		\draw [bend right=90] (20.center) to (17.center);
+		\draw (20.center) to (16);
+		\draw (15) to (19.center);
+		\draw (18.center) to (17.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

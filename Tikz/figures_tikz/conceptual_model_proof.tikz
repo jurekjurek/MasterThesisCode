@@ -1,0 +1,23 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=kpoint] (3) at (-5, -0.75) {$h$};
+		\node [style=none] (6) at (-2.5, 0) {$=$};
+		\node [style=kpointdag] (9) at (-5, 0.75) {$c$};
+		\node [style=kpoint] (24) at (0, -2.25) {$g$};
+		\node [style=mapadj] (26) at (0, 0.75) {$U$};
+		\node [style=upground] (28) at (0, 2) {};
+		\node [style=map] (29) at (0, -0.75) {$U$};
+		\node [style=none] (30) at (2.5, 0) {$=$};
+		\node [style=kpoint] (31) at (5, -0.75) {$h$};
+		\node [style=upground] (33) at (5, 0.75) {};
+		\node [style=none] (34) at (7.5, 0) {$=$};
+		\node [style=empty diagram] (35) at (10, 0) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (9) to (3);
+		\draw (28) to (26);
+		\draw (29) to (24);
+		\draw (29) to (26);
+		\draw (33) to (31);
+	\end{pgfonlayer}
+\end{tikzpicture}

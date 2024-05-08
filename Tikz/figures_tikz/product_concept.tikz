@@ -1,0 +1,24 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=large map] (43) at (3.25, 0) {$U$};
+		\node [style=none] (44) at (0, 0) {$=$};
+		\node [style=none] (45) at (3.25, -1.75) {};
+		\node [style=right label] (46) at (2.25, 1) {$H_1$};
+		\node [style=right label] (47) at (3.5, -1.5) {$H$};
+		\node [style=kpointadj] (48) at (2, 2) {$c_1$};
+		\node [style=kpointadj] (49) at (4.75, 2) {$c_n$};
+		\node [style=none] (50) at (2, 0) {};
+		\node [style=none] (51) at (4.75, 0) {};
+		\node [style=none] (52) at (3.75, 1) {$\dots$};
+		\node [style=right label] (53) at (5, 1) {$H_n$};
+		\node [style=none] (54) at (-2, -0.75) {};
+		\node [style=right label] (55) at (-1.75, -0.5) {$H$};
+		\node [style=kpointadj] (56) at (-2, 0.75) {$c$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (43) to (45.center);
+		\draw (48) to (50.center);
+		\draw (49) to (51.center);
+		\draw (56) to (54.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

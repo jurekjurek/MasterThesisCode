@@ -1,0 +1,18 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (3) at (-2.25, -1) {};
+		\node [style=none] (6) at (0, 0) {$=$};
+		\node [style=dkpointdag] (9) at (-2.25, 0.5) {$c$};
+		\node [style=right label] (20) at (-2, -0.75) {$H$};
+		\node [style=none] (24) at (2.25, -1.5) {};
+		\node [style=dmapadj] (26) at (2.25, 0) {$\hat{U}$};
+		\node [style=right label] (27) at (2.5, -1.25) {$H$};
+		\node [style=upground] (28) at (2.25, 2) {};
+		\node [style=right label] (29) at (2.5, 1) {$G$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [doubled] (9) to (3.center);
+		\draw [doubled] (26) to (24.center);
+		\draw [doubled] (28) to (26);
+	\end{pgfonlayer}
+\end{tikzpicture}

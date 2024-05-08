@@ -1,0 +1,26 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=kpoint] (0) at (-2.5, -0.5) {$\psi$};
+		\node [style=none] (1) at (-2.5, 0.5) {};
+		\node [style=none] (2) at (-4, -0.25) {$e^{i\alpha}$};
+		\node [style=none] (3) at (0, 0) {$\longmapsto$};
+		\node [style=kpoint] (4) at (6.25, -0.75) {$\psi$};
+		\node [style=kpoint conjugate] (5) at (4.75, -0.75) {$\psi$};
+		\node [style=none] (6) at (4.75, -0.25) {};
+		\node [style=none] (7) at (6.25, -0.25) {};
+		\node [style=none] (8) at (5.25, 0.25) {};
+		\node [style=none] (9) at (5.75, 0.25) {};
+		\node [style=none] (10) at (5.25, 0.75) {};
+		\node [style=none] (11) at (5.75, 0.75) {};
+		\node [style=none] (12) at (2.5, -0.5) {$e^{i\alpha - i \alpha}$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=none] (1.center) to (0);
+		\draw [style=none] (7.center) to (4);
+		\draw [style=none] (5) to (6.center);
+		\draw [in=-90, out=90] (6.center) to (8.center);
+		\draw [in=90, out=-90, looseness=1.25] (9.center) to (7.center);
+		\draw (10.center) to (8.center);
+		\draw (9.center) to (11.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

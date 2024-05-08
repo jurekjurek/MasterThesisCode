@@ -1,0 +1,25 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (62) at (-0.75, 2.25) {};
+		\node [style=upground] (63) at (-0.75, 5.5) {};
+		\node [style=right label] (65) at (1, 4.5) {$H$};
+		\node [style=none] (66) at (0.75, 2.25) {};
+		\node [style=dkpointdag] (67) at (0.75, 5.5) {$e$};
+		\node [style=semilarge dmap, single] (69) at (0, 3.5) {$\Phi$};
+		\node [style=dkpoint] (70) at (0, 0) {$\rho$};
+		\node [style=ddot] (71) at (0, 1.5) {};
+		\node [style=right label] (72) at (0.25, 0.75) {$H$};
+		\node [style=right label] (73) at (-0.5, 4.5) {$G$};
+		\node [style=none] (74) at (2.75, 4) {$=$};
+		\node [style=none] (75) at (6.75, 4) {$(\text{Tr}_G \otimes e) \circ \Phi \circ \delta_H \circ \rho$};
+		\node [style=none, align=right, font={\footnotesize}] (79) at (8, 0.75) {$\rho \in \mathcal{B}(H)$\\$\delta(\rho) = \sum_{ij} \ket{ii}\bra{i}\rho\ket{j}\bra{jj}$\\$\Phi: \mathcal{B}(H \otimes H) \to \mathcal{B}(G \otimes H)$\\$\text{Tr}_G: \mathcal{B}(G) \to \mathbb{C}$\\$e: \mathcal{B}(H) \to \mathbb{C}$};
+		\node [style=none] (80) at (10.75, 4) {$\in \mathbb{C}$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [doubled] (63) to (62.center);
+		\draw [doubled] (67) to (66.center);
+		\draw [doubled] (71) to (70);
+		\draw [doubled, in=150, out=-90] (62.center) to (71);
+		\draw [doubled, in=30, out=-90] (66.center) to (71);
+	\end{pgfonlayer}
+\end{tikzpicture}

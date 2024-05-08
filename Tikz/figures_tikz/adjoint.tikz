@@ -1,0 +1,32 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=mapadj] (0) at (-6, -0.25) {$f$};
+		\node [style=map] (1) at (-2, -0.25) {$f$};
+		\node [style=none] (2) at (-6, -1.5) {};
+		\node [style=none] (3) at (-6, 1) {};
+		\node [style=none] (4) at (-2, 1) {};
+		\node [style=none] (5) at (-2, -1.5) {};
+		\node [style=none] (6) at (-4, -0.25) {$\leftrightarrow$};
+		\node [style=none] (7) at (-4, 0.25) {$*$};
+		\node [style=kpoint] (8) at (4, -0.5) {$\psi$};
+		\node [style=kpoint adjoint] (9) at (8, 0.25) {$\psi$};
+		\node [style=none] (11) at (4, 1) {};
+		\node [style=none] (13) at (8, -1.25) {};
+		\node [style=none] (14) at (6, -0.25) {$\leftrightarrow$};
+		\node [style=none] (15) at (6, 0.25) {$*$};
+		\node [style=right label] (16) at (-5.75, -1.25) {$B$};
+		\node [style=right label] (17) at (-5.75, 0.75) {$A$};
+		\node [style=right label] (18) at (-1.75, 0.75) {$B$};
+		\node [style=right label] (19) at (-1.75, -1.25) {$A$};
+		\node [style=right label] (20) at (4.25, 0.75) {$A$};
+		\node [style=right label] (21) at (8.25, -1) {$A$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (3.center) to (0);
+		\draw (0) to (2.center);
+		\draw (4.center) to (1);
+		\draw (1) to (5.center);
+		\draw (11.center) to (8);
+		\draw (9) to (13.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

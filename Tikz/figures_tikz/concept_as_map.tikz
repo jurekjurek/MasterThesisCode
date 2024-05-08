@@ -1,0 +1,27 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (54) at (-2, -1) {};
+		\node [style=wide dkpointdag] (56) at (-3, 0) {$c$};
+		\node [style=none] (61) at (-4, -2) {};
+		\node [style=none] (62) at (-2, 0) {};
+		\node [style=none] (63) at (-4, 0) {};
+		\node [style=dmap] (64) at (-9, 0) {$f$};
+		\node [style=none] (65) at (-9, -2) {};
+		\node [style=none] (66) at (-9, 2) {};
+		\node [style=right label] (67) at (-8.75, 1.75) {$G$};
+		\node [style=right label] (68) at (-3.75, -1.75) {$H$};
+		\node [style=right label] (69) at (-0.25, 1.75) {$G$};
+		\node [style=right label] (70) at (-8.75, -1.75) {$H$};
+		\node [style=none] (71) at (-6.25, 0) {$=$};
+		\node [style=none] (72) at (-0.5, -1) {};
+		\node [style=none] (73) at (-0.5, 2) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [doubled] (63.center) to (61.center);
+		\draw [doubled] (62.center) to (54.center);
+		\draw [doubled] (66.center) to (64);
+		\draw [doubled] (65.center) to (64);
+		\draw [doubled, bend right=90, looseness=1.75] (54.center) to (72.center);
+		\draw [doubled] (73.center) to (72.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

@@ -1,0 +1,46 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=dmaptrans, minimum width=8mm] (12) at (6, 0) {$g$};
+		\node [style=dmapdag, minimum width=8mm] (13) at (-2, 0) {$f$};
+		\node [style=dmapdag, minimum width=8mm] (14) at (9.5, 0) {$g$};
+		\node [style=none] (15) at (2, 0) {=};
+		\node [style=none] (16) at (-2.75, 1.75) {};
+		\node [style=none] (17) at (-1.75, 1.75) {};
+		\node [style=none] (18) at (-2.75, 0.5) {};
+		\node [style=none] (19) at (-1.75, 0.5) {};
+		\node [style=none] (20) at (-2.75, -0.5) {};
+		\node [style=none] (21) at (-1.75, -0.5) {};
+		\node [style=none] (22) at (-2.75, -1.75) {};
+		\node [style=none] (23) at (-1.75, -1.75) {};
+		\node [style=none] (24) at (5.75, 1.75) {};
+		\node [style=none] (25) at (9.75, 1.75) {};
+		\node [style=none] (26) at (5.75, 0.5) {};
+		\node [style=none] (27) at (9.75, 0.5) {};
+		\node [style=none] (28) at (6, -0.5) {};
+		\node [style=none] (29) at (9.5, -0.5) {};
+		\node [style=none] (30) at (6, -1.75) {};
+		\node [style=none] (31) at (9.5, -1.75) {};
+		\node [style=none] (32) at (6.5, 0.5) {};
+		\node [style=none] (33) at (9, 0.5) {};
+		\node [style=none] (34) at (-2.75, 2.5) {\texttt{B}};
+		\node [style=none] (35) at (-1.75, 2.5) {\texttt{B}};
+		\node [style=none] (36) at (5.75, 2.5) {\texttt{B}};
+		\node [style=none] (37) at (9.75, 2.5) {\texttt{B}};
+		\node [style=none] (38) at (9.5, -2.5) {\texttt{A}};
+		\node [style=none] (39) at (6, -2.5) {\texttt{A}};
+		\node [style=none] (40) at (-1.75, -2.5) {\texttt{A}};
+		\node [style=none] (41) at (-2.75, -2.5) {\texttt{A}};
+		\node [style=none] (42) at (7.75, 2.25) {\texttt{C}};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=doubled] (16.center) to (18.center);
+		\draw [style=doubled] (19.center) to (17.center);
+		\draw [style=doubled] (20.center) to (22.center);
+		\draw [style=doubled] (23.center) to (21.center);
+		\draw [style=doubled] (24.center) to (26.center);
+		\draw [style=doubled] (27.center) to (25.center);
+		\draw [style=doubled] (28.center) to (30.center);
+		\draw [style=doubled] (31.center) to (29.center);
+		\draw [style=doubled, bend left=90, looseness=1.75] (32.center) to (33.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

@@ -1,0 +1,11 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=kpoint adjoint] (0) at (-7, 0.75) {$\psi$};
+		\node [style=kpoint] (2) at (-7, -0.75) {$\psi$};
+		\node [style=none] (4) at (-5, 0) {$=$};
+		\node [style=empty diagram] (5) at (-3, 0) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=none] (0) to (2);
+	\end{pgfonlayer}
+\end{tikzpicture}

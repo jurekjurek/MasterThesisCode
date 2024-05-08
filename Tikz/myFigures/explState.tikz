@@ -1,0 +1,10 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=kpoint] (0) at (2, -0.5) {$\psi$};
+		\node [style=none] (1) at (2, 0.5) {};
+		\node [style=none] (2) at (0.5, -0.25) {$e^{i\alpha}$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=none] (1.center) to (0);
+	\end{pgfonlayer}
+\end{tikzpicture}

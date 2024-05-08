@@ -1,0 +1,13 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (1, 0) {};
+		\node [style=none] (1) at (-1, 0) {};
+		\node [style=none] (2) at (1, -0.75) {};
+		\node [style=none] (3) at (-1, -0.75) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [doubled, bend left=90, looseness=1.75] (1.center) to (0.center);
+		\draw [doubled] (1.center) to (3.center);
+		\draw [doubled] (0.center) to (2.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

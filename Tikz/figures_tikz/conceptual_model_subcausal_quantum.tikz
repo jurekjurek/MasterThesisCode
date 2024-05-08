@@ -1,0 +1,15 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-2, -0.75) {};
+		\node [style=dkcopoint] (3) at (-2, 0.75) {$c$};
+		\node [style=none] (4) at (-2, 0) {};
+		\node [style=none] (6) at (0, 0) {$\le$};
+		\node [style=upground] (7) at (2, 0.75) {};
+		\node [style=none] (8) at (2, -0.75) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [doubled] (3) to (4.center);
+		\draw [doubled] (0.center) to (4.center);
+		\draw [doubled] (7) to (8.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

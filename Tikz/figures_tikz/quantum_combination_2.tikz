@@ -1,0 +1,19 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=kpointadj] (48) at (-3.5, 0.25) {$0$};
+		\node [style=kpointadj] (49) at (1.5, 0.25) {$1$};
+		\node [style=none] (50) at (-3.5, -1.25) {};
+		\node [style=none] (51) at (1.5, -1.25) {};
+		\node [style=none] (52) at (0, 0) {$+$};
+		\node [style=kpointadj] (57) at (-1.5, 0.25) {$0$};
+		\node [style=none] (58) at (-1.5, -1.25) {};
+		\node [style=kpointadj] (59) at (3.5, 0.25) {$1$};
+		\node [style=none] (60) at (3.5, -1.25) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (48) to (50.center);
+		\draw (49) to (51.center);
+		\draw (57) to (58.center);
+		\draw (59) to (60.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

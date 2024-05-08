@@ -1,0 +1,13 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=mapconj] (18) at (4, 0) {$M_i$};
+		\node [style=none] (19) at (4, -1.75) {$$};
+		\node [style=map] (21) at (6.5, 0) {$M_i$};
+		\node [style=none] (22) at (6.5, -1.75) {$$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=none] (18) to (19.center);
+		\draw [style=none] (21) to (22.center);
+		\draw [bend left=90, looseness=1.75] (18) to (21);
+	\end{pgfonlayer}
+\end{tikzpicture}

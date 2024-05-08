@@ -1,0 +1,22 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none, align=center] (0) at (-3.25, -4) {Conceptual\\Space Theory};
+		\node [style=none, align=center] (1) at (3.25, -4) {Quantum\\Theory};
+		\node [style=none, align=center] (2) at (0, 2) {Diagrammatic\\Reasoning};
+		\node [style=none, align=center] (3) at (0, 6.75) {Category\\Theory};
+		\node [style=none] (4) at (-2.75, -3) {};
+		\node [style=none] (5) at (2.75, -3) {};
+		\node [style=none] (6) at (-0.25, 1) {};
+		\node [style=none] (7) at (0, 3) {};
+		\node [style=none] (8) at (0, 5.75) {};
+		\node [style=none] (9) at (0.25, 1) {};
+		\node [style=none] (10) at (3.75, -3) {};
+		\node [style=none] (11) at (-3.75, -3) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [causal edge, <->, dashed, very thick, bend left=45, looseness=2.00] (4.center) to (5.center);
+		\draw [timeline, thick dashed edge] (8.center) to (7.center);
+		\draw [causal edge, <-] (6.center) to (11.center);
+		\draw [causal edge, <-] (9.center) to (10.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

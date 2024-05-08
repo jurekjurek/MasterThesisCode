@@ -1,0 +1,29 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=large dmap] (43) at (-3.5, 0) {$\hat{U}$};
+		\node [style=none] (44) at (0, 0) {$=$};
+		\node [style=dkpoint] (45) at (-3.5, -2) {$\hat{h}$};
+		\node [style=right label] (46) at (-4.5, 1.25) {$H_1$};
+		\node [style=right label] (47) at (-3.25, -1.25) {$H$};
+		\node [style=none] (48) at (-4.75, 1.5) {};
+		\node [style=none] (49) at (-2, 1.5) {};
+		\node [style=none] (50) at (-4.75, 0) {};
+		\node [style=none] (51) at (-2, 0) {};
+		\node [style=none] (52) at (-3, 1.25) {$\dots$};
+		\node [style=right label] (53) at (-1.75, 1.25) {$H_n$};
+		\node [style=right label] (54) at (2.25, 0.5) {$H_1$};
+		\node [style=none] (55) at (2, 0.75) {};
+		\node [style=none] (56) at (4.75, 0.75) {};
+		\node [style=none] (57) at (3.75, 0.5) {$\dots$};
+		\node [style=right label] (58) at (5, 0.5) {$H_n$};
+		\node [style=dkpoint] (59) at (2, -0.75) {$\hat{h_1}$};
+		\node [style=dkpoint] (60) at (4.75, -0.75) {$\hat{h_n}$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [doubled] (43) to (45);
+		\draw [doubled] (48.center) to (50.center);
+		\draw [doubled] (49.center) to (51.center);
+		\draw [doubled] (55.center) to (59);
+		\draw [doubled] (56.center) to (60);
+	\end{pgfonlayer}
+\end{tikzpicture}

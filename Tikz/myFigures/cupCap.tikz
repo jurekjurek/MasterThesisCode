@@ -1,0 +1,16 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (2.75, 1) {};
+		\node [style=none] (1) at (4.75, 1) {};
+		\node [style=none] (2) at (9.75, 0) {};
+		\node [style=none] (3) at (11.75, 0) {};
+		\node [style=none] (4) at (0.5, 0.5) {};
+		\node [style=none] (5) at (0.5, 0.5) {cup:};
+		\node [style=none] (6) at (8, 0.5) {};
+		\node [style=none] (7) at (8, 0.5) {cap:};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [bend left=90, looseness=1.75] (1.center) to (0.center);
+		\draw [bend left=270, looseness=1.75] (3.center) to (2.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

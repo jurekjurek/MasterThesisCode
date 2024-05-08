@@ -1,0 +1,56 @@
+\begin{tikzpicture}[scale=0.80]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-1.5, -1.5) {};
+		\node [style=none] (1) at (-2.75, -1.5) {};
+		\node [style=left label] (2) at (-3, -1.5) {\color{gray}$s$-type has {\tt Alice}-wire};
+		\node [style=none] (3) at (2.75, -1.5) {};
+		\node [style=right label] (4) at (3, -1.5) {\color{gray}$s$-type has {\tt Bob}-wire};
+		\node [style=none] (5) at (1.5, -1.5) {};
+		\node [style=none] (6) at (1, 0.5) {};
+		\node [style=none] (7) at (3.75, 0.75) {};
+		\node [style=none] (8) at (3.5, 1.5) {};
+		\node [style=none] (9) at (1.25, -2.5) {\footnotesize\tt  Alice};
+		\node [style=none] (10) at (5, 0.75) {};
+		\node [style=none] (11) at (-3.5, 2) {\footnotesize\tt  Bob};
+		\node [style=none] (12) at (-0.25, 0.25) {};
+		\node [style=none] (13) at (1.25, -2) {};
+		\node [style=none] (14) at (0.25, 0.25) {};
+		\node [style=none] (15) at (0.25, 0.25) {};
+		\node [style=none] (16) at (0.25, 0.5) {};
+		\node [style=none] (17) at (3.5, 0.5) {};
+		\node [style=none, boldedge] (18) at (0, 2.25) {\!\!{\tt bites}\!\!};
+		\node [style=none] (19) at (-1.25, -2) {};
+		\node [style=left label] (20) at (-5.25, 0.75) {\color{gray}noun  as wire};
+		\node [style=none] (21) at (3.5, 2) {\footnotesize\tt  Alice};
+		\node [style=none] (22) at (-1, 0.5) {};
+		\node [style=none] (23) at (-5, 0.75) {};
+		\node [style=none] (24) at (-3.5, 1.5) {};
+		\node [style=none] (25) at (-1.25, -2.5) {\footnotesize\tt  Bob};
+		\node [style=none] (26) at (-3.5, 0.5) {};
+		\node [style=none] (27) at (-0.25, 0.5) {};
+		\node [style=none] (28) at (-0.25, 0.25) {};
+		\node [style=none] (29) at (-3.75, 0.75) {};
+		\node [style=right label] (30) at (5.25, 0.75) {\color{gray}noun as wire};
+		\node [style=none] (31) at (0, 1.75) {};
+		\node [style=none] (32) at (1.5, 0.5) {};
+		\node [style=none] (33) at (-1.5, 0.5) {};
+		\node [style=none] (34) at (0, 0.5) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=pointer edge, in=180, out=0, looseness=0.75] (1.center) to (0.center);
+		\draw [style=pointer edge, in=0, out=180, looseness=0.75] (3.center) to (5.center);
+		\draw [style=boldedge, bend right=90, looseness=1.25] (26.center) to (22.center);
+		\draw [style=boldedge, bend right=90, looseness=1.25] (6.center) to (17.center);
+		\draw [style=boldedge] (27.center) to (12.center);
+		\draw [style=pointer edge, in=180, out=0, looseness=0.75] (23.center) to (29.center);
+		\draw [style=pointer edge, in=0, out=180, looseness=0.75] (10.center) to (7.center);
+		\draw [style=boldedge] (24.center) to (26.center);
+		\draw [style=boldedge] (8.center) to (17.center);
+		\draw [style=boldedge] (16.center) to (14.center);
+		\draw [style=boldedge, in=90, out=-90] (28.center) to (19.center);
+		\draw [style=boldedge, in=90, out=-90] (15.center) to (13.center);
+		\draw [style=boldedge] (33.center) to (32.center);
+		\draw [style=boldedge] (32.center) to (31.center);
+		\draw [style=boldedge] (31.center) to (33.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

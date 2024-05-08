@@ -1,0 +1,62 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (35) at (-5.5, -3) {};
+		\node [style=none] (36) at (6.5, -3) {};
+		\node [style=none] (37) at (-5.5, -4.5) {};
+		\node [style=none] (38) at (2, -8) {};
+		\node [style=none] (39) at (-5.5, -2) {};
+		\node [style=none] (40) at (5, -2) {};
+		\node [style=none] (41) at (-5.5, 4) {};
+		\node [style=none] (42) at (6.5, 4) {};
+		\node [style=none] (43) at (-5.5, 5) {};
+		\node [style=none] (44) at (6.5, 5) {};
+		\node [style=none] (45) at (-5.5, 6.5) {};
+		\node [style=none] (46) at (-1, 8) {};
+		\node [style=none] (47) at (-7, 0) {$=$};
+		\node [style=wide dkpointdag, minimum width=3.5cm] (12) at (1, 2.5) {$\textit{red circle}$};
+		\node [style=none] (13) at (-2, 2) {};
+		\node [style=none] (14) at (-2, -0.5) {};
+		\node [style=none] (16) at (4, 2) {};
+		\node [style=right label] (23) at (4.25, -2.5) {$H_4$};
+		\node [style=right label] (24) at (-3.75, 4.5) {$H_1$};
+		\node [style=none] (25) at (0, 2) {};
+		\node [style=right label] (27) at (0.25, -2.5) {$H_2$};
+		\node [style=none] (28) at (2, 2) {};
+		\node [style=dkpoint] (29) at (2, -4) {$h_3$};
+		\node [style=right label] (30) at (2.25, -2.5) {$H_3$};
+		\node [style=dkpoint] (31) at (4, -4) {$h_4$};
+		\node [style=dkpoint] (32) at (0, -4) {$h_2$};
+		\node [style=dkpointtrans] (33) at (-4, 6) {$c$};
+		\node [style=none] (34) at (-4, -0.5) {};
+		\node [style=dkpointdag] (48) at (-12, 2.5) {$c$};
+		\node [style=dmap] (49) at (-12, 0) {$f$};
+		\node [style=dkpoint] (50) at (-12, -2.5) {$h$};
+		\node [style=right label] (51) at (-11.75, -1.5) {$H_2 \otimes H_3 \otimes H_4$};
+		\node [style=right label] (52) at (-11.75, 1.25) {$H_1$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [thick gray dashed edge] (38.center)
+			 to (36.center)
+			 to (35.center)
+			 to (37.center)
+			 to cycle;
+		\draw [thick gray dashed edge] (42.center)
+			 to (40.center)
+			 to (39.center)
+			 to (41.center)
+			 to cycle;
+		\draw [thick gray dashed edge] (46.center)
+			 to (44.center)
+			 to (43.center)
+			 to (45.center)
+			 to cycle;
+		\draw [doubled] (13.center) to (14.center);
+		\draw [doubled] (28.center) to (29);
+		\draw [doubled, bend right=90, looseness=1.25] (34.center) to (14.center);
+		\draw [doubled] (33) to (34.center);
+		\draw [doubled] (16.center) to (31);
+		\draw [doubled] (25.center) to (32);
+		\draw [doubled] (49) to (50);
+		\draw [doubled] (49) to (48);
+	\end{pgfonlayer}
+\end{tikzpicture}

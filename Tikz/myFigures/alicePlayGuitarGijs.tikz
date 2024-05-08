@@ -1,0 +1,31 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (13) at (2.75, -0.5) {$n$};
+		\node [style=none] (15) at (-2.75, -0.5) {$n$};
+		\node [style=none] (24) at (0, -0.5) {$(n\backslash s)/n$};
+		\node [style=none] (26) at (-2.75, 0.25) {Alice};
+		\node [style=none] (27) at (2.75, 0.25) {guitar};
+		\node [style=none] (28) at (0, 0.25) {plays};
+		\node [style=none] (41) at (0, -3) {};
+		\node [style=none] (42) at (2.75, -1.25) {};
+		\node [style=none] (43) at (0, -1.5) {};
+		\node [style=none] (44) at (0, -1) {};
+		\node [style=dot, inner sep=0.05cm] (46) at (0, -2.25) {$/$};
+		\node [style=dot, inner sep=0.05cm] (47) at (-2, -3) {\large $\backslash$};
+		\node [style=none] (48) at (-1.75, -2.25) {};
+		\node [style=none] (49) at (-0.75, -2) {};
+		\node [style=none] (50) at (-2.5, -2.25) {};
+		\node [style=none] (51) at (-2.75, -1) {};
+		\node [style=none] (52) at (-1.75, -4.25) {};
+		\node [style=none] (53) at (-2, -3.75) {};
+		\node [style=none] (54) at (-1.25, -4) {};
+		\node [style=none] (55) at (-1.25, -4) {$s$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [causal edge, <-, in=255, out=-90] (41.center) to (42.center);
+		\draw [causal edge, <-] (43.center) to (44.center);
+		\draw [causal edge, <-, bend left, looseness=1.25] (48.center) to (49.center);
+		\draw [causal edge, <-, bend left=15, looseness=1.25] (50.center) to (51.center);
+		\draw [causal edge, <-, bend left, looseness=1.25] (52.center) to (53.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

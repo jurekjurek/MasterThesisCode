@@ -1,0 +1,9 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=dkpointadj] (0) at (0, 0) {$\hat{\phi}_i$};
+		\node [style=none] (1) at (0, -1) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [doubled] (1.center) to (0);
+	\end{pgfonlayer}
+\end{tikzpicture}

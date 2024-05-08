@@ -1,0 +1,24 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (1) at (-2, 0) {:};
+		\node [style=none] (2) at (2.75, 0) {};
+		\node [style=none] (3) at (2.75, 0) {$\sum_i \ket{i \ldots i} \bra{i \ldots i}$};
+		\node [style=none] (4) at (-5.5, -2) {};
+		\node [style=white dot] (5) at (-4, 0) {};
+		\node [style=none] (6) at (-5.5, 2) {};
+		\node [style=none] (7) at (-4.5, -2) {};
+		\node [style=none] (8) at (-4.5, 2) {};
+		\node [style=none] (9) at (-2.5, 2) {};
+		\node [style=none] (10) at (-2.5, -2) {};
+		\node [style=label] (11) at (-3.5, 1.5) {$\dots$};
+		\node [style=label] (12) at (-3.5, -1.5) {$\dots$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [in=-144, out=90] (4.center) to (5);
+		\draw [in=-90, out=36] (5) to (9.center);
+		\draw [in=-119, out=90] (7.center) to (5);
+		\draw [in=-36, out=90] (10.center) to (5);
+		\draw [in=-90, out=144] (5) to (6.center);
+		\draw [in=-90, out=119] (5) to (8.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

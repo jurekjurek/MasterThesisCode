@@ -1,0 +1,23 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=mapdag] (12) at (-2, -1.25) {$U$};
+		\node [style=map] (13) at (-2, 1.25) {$U$};
+		\node [style=none] (14) at (-2, 0) {};
+		\node [style=none] (15) at (0, 0) {$=$};
+		\node [style=none] (16) at (-2, -2.75) {};
+		\node [style=none] (17) at (-2, 2.75) {};
+		\node [style=none] (18) at (1, 2.75) {};
+		\node [style=none] (19) at (1, -2.75) {};
+		\node [style=right label] (24) at (-1.75, 0) {$A$};
+		\node [style=right label] (25) at (-1.75, 2.5) {$B$};
+		\node [style=right label] (26) at (-1.75, -2.5) {$B$};
+		\node [style=right label] (27) at (1.25, 0) {$B$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (13) to (14.center);
+		\draw (12) to (14.center);
+		\draw (17.center) to (13);
+		\draw (12) to (16.center);
+		\draw (18.center) to (19.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

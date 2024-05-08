@@ -1,0 +1,11 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=dmap] (2) at (0, 0.75) {$U$};
+		\node [style=doubled] (3) at (0, 2.25) {};
+		\node [style=dkpoint] (5) at (0, -1) {$\rho$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=doubled] (3) to (2);
+		\draw [style=doubled] (2) to (5);
+	\end{pgfonlayer}
+\end{tikzpicture}

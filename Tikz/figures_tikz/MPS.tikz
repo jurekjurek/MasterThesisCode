@@ -1,0 +1,24 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=box, minimum width=5cm] (35) at (-5, 0) {$T$};
+		\node [style=none] (36) at (-9, 0) {};
+		\node [style=none] (37) at (-9, 1.25) {};
+		\node [style=none] (38) at (-7, 0) {};
+		\node [style=none] (39) at (-7, 1.25) {};
+		\node [style=none] (40) at (-3, 0) {};
+		\node [style=none] (41) at (-3, 1.25) {};
+		\node [style=none] (42) at (-1, 0) {};
+		\node [style=none] (43) at (-1, 1.25) {};
+		\node [style=label] (44) at (-7, 1.75) {$s_2$};
+		\node [style=label] (45) at (-9, 1.75) {$s_1$};
+		\node [style=label] (46) at (-1, 1.75) {$s_N$};
+		\node [style=label] (47) at (-3, 1.75) {$s_{N-1}$};
+		\node [style=label] (48) at (-5, 1.75) {$\dots$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (36.center) to (37.center);
+		\draw (38.center) to (39.center);
+		\draw (40.center) to (41.center);
+		\draw (42.center) to (43.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

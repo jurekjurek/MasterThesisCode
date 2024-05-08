@@ -1,0 +1,43 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=huge dmap] (12) at (-5, 0) {Concept VQC};
+		\node [style=none] (13) at (-7.25, 0) {};
+		\node [style=none] (14) at (-7.25, -2) {};
+		\node [style=none] (15) at (-4.25, -2) {};
+		\node [style=none] (16) at (-4.25, 0) {};
+		\node [style=none] (17) at (-2, 0) {};
+		\node [style=kpoint] (18) at (-2, -2) {$\phi^c$};
+		\node [style=none] (19) at (-7.25, 2) {};
+		\node [style=none] (20) at (-4.25, 2) {};
+		\node [style=none] (21) at (-5.25, -1.75) {$\dots$};
+		\node [style=right label] (23) at (-4, -1.75) {$H_n$};
+		\node [style=right label] (24) at (-7, -1.75) {$H_1$};
+		\node [style=none] (50) at (0, 0) {$=$};
+		\node [style=dkpoint] (52) at (7, -3.5) {$0$};
+		\node [style=none] (53) at (7, 3.5) {};
+		\node [style=huge dmap, minimum width=4.5cm] (55) at (6, -1.5) {$\hat{U}(\phi^c_1)$};
+		\node [style=none] (59) at (8.75, -3.25) {$\dots$};
+		\node [style=dkpoint] (60) at (10, -3.5) {$0$};
+		\node [style=none] (61) at (10, 3.5) {};
+		\node [style=none] (62) at (2, -3.5) {};
+		\node [style=upground] (63) at (2, 3.5) {};
+		\node [style=right label] (64) at (2.25, -3.25) {$H_1$};
+		\node [style=right label] (65) at (5.25, -3.25) {$H_n$};
+		\node [style=none] (66) at (5, -3.5) {};
+		\node [style=upground] (67) at (5, 3.5) {};
+		\node [style=none] (68) at (4, -3.25) {$\dots$};
+		\node [style=huge dmap, minimum width=4.5cm] (69) at (6, 1.5) {$\hat{U}(\phi^c_m)$};
+		\node [style=none] (70) at (6, 0.25) {$\vdots$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [doubled] (16.center) to (15.center);
+		\draw [doubled] (13.center) to (14.center);
+		\draw (18) to (17.center);
+		\draw [doubled] (19.center) to (13.center);
+		\draw [doubled] (20.center) to (16.center);
+		\draw [doubled] (53.center) to (52);
+		\draw [doubled] (61.center) to (60);
+		\draw [doubled] (63) to (62.center);
+		\draw [doubled] (67) to (66.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

@@ -1,0 +1,57 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=wide dkpoint] (0) at (-8.5, -0.25) {Alice};
+		\node [style=wide dkpoint, minimum width=1.5cm] (1) at (-4.5, -0.25) {does};
+		\node [style=wide dkpoint, minimum width=1.5cm] (2) at (0, -0.25) {not};
+		\node [style=wide dkpoint, minimum width=1.25cm] (3) at (4.25, -0.25) {like};
+		\node [style=wide dkpoint] (4) at (8, -0.25) {Bob};
+		\node [style=none] (5) at (-8.5, 1.25) {};
+		\node [style=none] (6) at (8, 1.25) {};
+		\node [style=none] (7) at (3.25, -0.25) {};
+		\node [style=none] (8) at (5.25, -0.25) {};
+		\node [style=none] (9) at (4.25, 1.25) {};
+		\node [style=none] (10) at (3.25, 1.25) {};
+		\node [style=none] (11) at (5.25, 1.25) {};
+		\node [style=none] (12) at (-0.5, -0.25) {};
+		\node [style=none] (13) at (0.5, -0.25) {};
+		\node [style=none] (14) at (1.5, 0) {};
+		\node [style=none] (15) at (-1.5, -0.25) {};
+		\node [style=none] (16) at (-1.5, 1.25) {};
+		\node [style=none] (17) at (-0.5, 1.25) {};
+		\node [style=none] (18) at (0.5, 1.25) {};
+		\node [style=none] (19) at (1.5, 1.25) {};
+		\node [style=none] (20) at (-5, -0.25) {};
+		\node [style=none] (21) at (-4, -0.25) {};
+		\node [style=none] (22) at (-3, 0) {};
+		\node [style=none] (23) at (-6, -0.25) {};
+		\node [style=none] (24) at (-6, 1.25) {};
+		\node [style=none] (25) at (-5, 1.25) {};
+		\node [style=none] (26) at (-4, 1.25) {};
+		\node [style=none] (27) at (-3, 1.25) {};
+		\node [style=label, {gray!0}] (28) at (0, 4) {syntax};
+		\node [style=none] (29) at (-10.5, 2.5) {};
+		\node [style=none] (30) at (-10.5, 0.25) {};
+		\node [style=none] (31) at (10.5, 0.25) {};
+		\node [style=none] (32) at (10.5, 2.5) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [doubled] (5.center) to (0);
+		\draw [doubled] (6.center) to (4);
+		\draw [doubled] (11.center) to (8.center);
+		\draw [doubled] (9.center) to (3);
+		\draw [doubled] (10.center) to (7.center);
+		\draw [doubled] (19.center) to (14.center);
+		\draw [doubled] (18.center) to (13.center);
+		\draw [doubled] (17.center) to (12.center);
+		\draw [doubled] (16.center) to (15.center);
+		\draw [doubled] (27.center) to (22.center);
+		\draw [doubled] (21.center) to (26.center);
+		\draw [doubled] (25.center) to (20.center);
+		\draw [doubled] (23.center) to (24.center);
+		\draw [style=thick dashed edge, {gray!0}] (30.center)
+			 to [in=270, out=90] (29.center)
+			 to (32.center)
+			 to (31.center)
+			 to cycle;
+	\end{pgfonlayer}
+\end{tikzpicture}

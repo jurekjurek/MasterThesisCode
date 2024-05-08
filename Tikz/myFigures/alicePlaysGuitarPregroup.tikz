@@ -1,0 +1,23 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (13) at (2.75, -0.25) {$n$};
+		\node [style=none] (15) at (-2.75, -0.25) {$n$};
+		\node [style=none] (16) at (-2.75, -1) {};
+		\node [style=none] (17) at (-0.75, -1) {};
+		\node [style=none] (23) at (-0.75, -0.25) {$n^r$};
+		\node [style=none] (24) at (0, -0.25) {$s$};
+		\node [style=none] (25) at (0.75, -0.25) {$n^l$};
+		\node [style=none] (26) at (-2.75, 0.5) {Alice};
+		\node [style=none] (27) at (2.75, 0.5) {guitar};
+		\node [style=none] (28) at (0, 0.5) {plays};
+		\node [style=none] (29) at (0.75, -1) {};
+		\node [style=none] (30) at (2.75, -1) {};
+		\node [style=none] (31) at (0, -1) {};
+		\node [style=none] (32) at (0, -2.75) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=thick, bend left=270, looseness=1.50] (16.center) to (17.center);
+		\draw [style=thick, bend left=270, looseness=1.50] (29.center) to (30.center);
+		\draw [style=thick] (31.center) to (32.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

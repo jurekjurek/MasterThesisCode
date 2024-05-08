@@ -1,0 +1,29 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=dot, inner sep=0.05cm] (2) at (4.25, 0) {$A$};
+		\node [style=none] (4) at (4.25, 1.25) {};
+		\node [style=label] (7) at (4.25, 1.75) {$s_2$};
+		\node [style=dot, inner sep=0.05cm] (23) at (2.25, 0) {$A$};
+		\node [style=none] (24) at (2.25, 1.25) {};
+		\node [style=label] (25) at (2.25, 1.75) {$s_1$};
+		\node [style=dot, inner sep=0.05cm] (26) at (10.25, 0) {$A$};
+		\node [style=none] (27) at (10.25, 1.25) {};
+		\node [style=label] (28) at (10.25, 1.75) {$s_N$};
+		\node [style=dot, inner sep=0.05cm] (29) at (8.25, 0) {$A$};
+		\node [style=none] (30) at (8.25, 1.25) {};
+		\node [style=label] (31) at (8.25, 1.75) {$s_{N-1}$};
+		\node [style=label] (32) at (6.25, 0) {$\dots$};
+		\node [style=none] (33) at (5.25, 0) {};
+		\node [style=none] (34) at (7.25, 0) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (4.center) to (2);
+		\draw (24.center) to (23);
+		\draw (27.center) to (26);
+		\draw (30.center) to (29);
+		\draw (2) to (23);
+		\draw (2) to (33.center);
+		\draw (34.center) to (29);
+		\draw (29) to (26);
+	\end{pgfonlayer}
+\end{tikzpicture}

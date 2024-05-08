@@ -1,0 +1,43 @@
+\begin{tikzpicture}[scale=0.80]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-7, -0.75) {};
+		\node [style=none] (1) at (-7, 0.25) {};
+		\node [style=none] (2) at (-5, -0.75) {};
+		\node [style=none] (3) at (-5, 0.25) {};
+		\node [style=none] (4) at (-6, 2) {\!\!{\tt *hates*}\!\!};
+		\node [style=none] (5) at (-2.75, 0) {$=$};
+		\node [style=none] (6) at (-1.25, -0.5) {};
+		\node [style=none] (7) at (1.25, -0.5) {};
+		\node [style=none] (8) at (5, -0.75) {};
+		\node [style=none] (9) at (6, 2) {\!\!{\tt *loves*}\!\!};
+		\node [style=none] (10) at (2.75, 0) {$=$};
+		\node [style=none] (11) at (7, -0.75) {};
+		\node [style=none] (12) at (5, 0.25) {};
+		\node [style=none] (13) at (7, 0.25) {};
+		\node [style=none] (18) at (4.5, 0.25) {};
+		\node [style=none] (19) at (7.5, 0.25) {};
+		\node [style=none] (20) at (6, 1.5) {};
+		\node [style=none] (24) at (5.25, 0.25) {};
+		\node [style=none] (25) at (6, 0.25) {};
+		\node [style=none] (26) at (6.75, 0.25) {};
+		\node [style=none] (27) at (-7.5, 0.25) {};
+		\node [style=none] (28) at (-4.5, 0.25) {};
+		\node [style=none] (29) at (-6, 1.5) {};
+		\node [style=none] (33) at (-6.75, 0.25) {};
+		\node [style=none] (34) at (-6, 0.25) {};
+		\node [style=none] (35) at (-5.25, 0.25) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=swap] (3.center) to (2.center);
+		\draw [style=swap] (1.center) to (0.center);
+		\draw [style=swap, bend left=90, looseness=1.50] (6.center) to (7.center);
+		\draw [style=swap] (12.center) to (8.center);
+		\draw [style=swap] (13.center) to (11.center);
+		\draw [style=thick] (18.center) to (19.center);
+		\draw [style=thick] (20.center) to (18.center);
+		\draw [style=thick] (20.center) to (19.center);
+		\draw [style=thick] (27.center) to (28.center);
+		\draw [style=thick] (29.center) to (27.center);
+		\draw [style=thick] (29.center) to (28.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

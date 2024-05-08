@@ -1,0 +1,18 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=kpoint adjoint] (1) at (0.75, 0.75) {$\phi$};
+		\node [style=kpoint] (7) at (0.75, -0.75) {$\psi$};
+		\node [style=kpoint transpose] (8) at (-0.75, 0.75) {$\phi$};
+		\node [style=kpoint conjugate] (9) at (-0.75, -0.75) {$\psi$};
+		\node [style=none] (10) at (-4, 0) {};
+		\node [style=none] (11) at (-4, 0) {0};
+		\node [style=none] (12) at (-3, 0) {$\leq$};
+		\node [style=none] (13) at (3, 0) {};
+		\node [style=none] (14) at (3, 0) {$\leq$};
+		\node [style=none] (15) at (4, 0) {1};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (1) to (7);
+		\draw (8) to (9);
+	\end{pgfonlayer}
+\end{tikzpicture}

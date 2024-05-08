@@ -1,0 +1,13 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (57) at (1, -1.25) {};
+		\node [style=wide dkpointdag] (58) at (0, 0.25) {$\hat{a}$};
+		\node [style=none] (59) at (-1, -1.25) {};
+		\node [style=none] (60) at (1, 0.25) {};
+		\node [style=none] (61) at (-1, 0.25) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [doubled] (61.center) to (59.center);
+		\draw [doubled] (60.center) to (57.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

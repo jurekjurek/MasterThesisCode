@@ -1,0 +1,25 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=kpoint adjoint] (0) at (0, 1) {\!\!{\tt bites}\!\!};
+		\node [style=none] (1) at (-3.5, 0.5) {};
+		\node [style=none] (2) at (-1, 0.5) {};
+		\node [style=none] (3) at (-0.25, 0.5) {};
+		\node [style=none] (4) at (3.5, 0.5) {};
+		\node [style=none] (5) at (1, 0.5) {};
+		\node [style=none] (6) at (-0.25, -1.75) {};
+		\node [style=none] (13) at (-3.5, 1.5) {};
+		\node [style=none] (14) at (3.5, 1.5) {};
+		\node [style=none] (15) at (3.5, 2) {\footnotesize\tt  Bob};
+		\node [style=none] (16) at (-3.5, 2) {\footnotesize\tt  Alice};
+		\node [style=none] (17) at (0.25, -1.75) {};
+		\node [style=none] (18) at (0.25, 0.5) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=swap, bend right=90, looseness=1.25] (1.center) to (2.center);
+		\draw [style=swap, bend right=90, looseness=1.25] (5.center) to (4.center);
+		\draw [style=swap] (3.center) to (6.center);
+		\draw [style=swap] (13.center) to (1.center);
+		\draw [style=swap] (14.center) to (4.center);
+		\draw [style=swap] (18.center) to (17.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

@@ -1,0 +1,12 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=copoint] (0) at (3, 0) {$\pi$};
+		\node [style=none] (1) at (3, -0.75) {};
+		\node [style=point] (2) at (-1, 0) {$\psi$};
+		\node [style=none] (3) at (-1, 0.75) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (0) to (1.center);
+		\draw (2) to (3.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

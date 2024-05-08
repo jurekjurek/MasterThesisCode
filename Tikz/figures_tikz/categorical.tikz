@@ -1,0 +1,60 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-4, -2.75) {};
+		\node [style=box] (2) at (-4, 0) {$1_A$};
+		\node [style=none] (3) at (-4, 2.75) {};
+		\node [style=none] (4) at (-2.5, 0) {$=$};
+		\node [style=none] (5) at (-1.5, 2.75) {};
+		\node [style=none] (6) at (-1.5, -2.75) {};
+		\node [style=right label] (7) at (-3.75, 2.5) {$A$};
+		\node [style=right label] (8) at (-1.25, 2.5) {$A$};
+		\node [style=right label] (9) at (-1.25, -2.5) {$A$};
+		\node [style=right label] (10) at (-3.75, -2.5) {$A$};
+		\node [style=none] (11) at (3, -2.75) {};
+		\node [style=box] (12) at (3, 0) {$g\circ f$};
+		\node [style=none] (13) at (3, 2.75) {};
+		\node [style=none] (14) at (5, 0) {$=$};
+		\node [style=none] (15) at (6.5, 2.75) {};
+		\node [style=none] (16) at (6.5, -2.75) {};
+		\node [style=right label] (17) at (3.25, 2.5) {$C$};
+		\node [style=right label] (18) at (6.75, 2.5) {$C$};
+		\node [style=right label] (19) at (6.75, -2.5) {$A$};
+		\node [style=right label] (20) at (3.25, -2.5) {$A$};
+		\node [style=box] (21) at (6.5, 1.25) {$g$};
+		\node [style=box] (22) at (6.5, -1.25) {$f$};
+		\node [style=right label] (23) at (6.75, 0) {$B$};
+		\node [style=none] (24) at (11, -2.75) {};
+		\node [style=box] (25) at (11, 0) {$f\otimes g$};
+		\node [style=none] (26) at (11, 2.75) {};
+		\node [style=none] (27) at (13, 0) {$=$};
+		\node [style=right label] (30) at (11.25, 2.5) {$C\otimes D$};
+		\node [style=right label] (33) at (11.25, -2.5) {$A\otimes B$};
+		\node [style=none] (37) at (14.5, -2.75) {};
+		\node [style=box] (38) at (14.5, 0) {$f$};
+		\node [style=none] (39) at (14.5, 2.75) {};
+		\node [style=right label] (40) at (14.75, 2.5) {$C$};
+		\node [style=right label] (41) at (14.75, -2.5) {$A$};
+		\node [style=none] (42) at (16.5, -2.75) {};
+		\node [style=box] (43) at (16.5, 0) {$g$};
+		\node [style=none] (44) at (16.5, 2.75) {};
+		\node [style=right label] (45) at (16.75, 2.5) {$D$};
+		\node [style=right label] (46) at (16.75, -2.5) {$B$};
+		\node [style=none] (47) at (20.5, 0) {$I$};
+		\node [style=none] (48) at (21.5, 0) {$=$};
+		\node [style=empty diagram] (49) at (23.5, 0) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (0.center) to (2);
+		\draw (2) to (3.center);
+		\draw (6.center) to (5.center);
+		\draw (11.center) to (12);
+		\draw (12) to (13.center);
+		\draw (16.center) to (15.center);
+		\draw (24.center) to (25);
+		\draw (25) to (26.center);
+		\draw (37.center) to (38);
+		\draw (38) to (39.center);
+		\draw (42.center) to (43);
+		\draw (43) to (44.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

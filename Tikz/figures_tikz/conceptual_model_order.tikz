@@ -1,0 +1,15 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=kpointdag] (3) at (-2, 0.75) {$d$};
+		\node [style=none] (6) at (0.25, 0) {$\le$};
+		\node [style=none] (8) at (-2, -1) {};
+		\node [style=right label] (22) at (-1.75, -0.75) {$H$};
+		\node [style=kpointdag] (24) at (2, 0.75) {$c$};
+		\node [style=none] (25) at (2, -1) {};
+		\node [style=right label] (28) at (2.25, -0.75) {$H$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (3) to (8.center);
+		\draw (24) to (25.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

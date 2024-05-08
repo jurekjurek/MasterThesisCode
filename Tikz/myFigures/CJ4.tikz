@@ -1,0 +1,25 @@
+\begin{tikzpicture}[scale=0.80]
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-4.75, 0.25) {};
+		\node [style=none] (1) at (-4.75, 1.25) {};
+		\node [style=none] (2) at (-1.5, 0) {$=$};
+		\node [style=none] (3) at (-4.75, -1.25) {};
+		\node [style=langbox] (4) at (-4.75, 0) {\!\!\!{\tt *hates*}\!\!\!};
+		\node [style=none] (5) at (-4.75, -0.25) {};
+		\node [style=none] (6) at (0, -1.25) {};
+		\node [style=none] (7) at (0, 1.25) {};
+		\node [style=none] (8) at (4.75, -0.25) {};
+		\node [style=none] (9) at (4.75, -1.25) {};
+		\node [style=none] (10) at (4.75, 1.25) {};
+		\node [style=none] (11) at (4.75, 0.25) {};
+		\node [style=none] (12) at (1.5, 0) {$=$};
+		\node [style=langbox] (13) at (4.75, 0) {\!\!\!{\tt *loves*}\!\!\!};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=swap] (1.center) to (0.center);
+		\draw [style=swap] (5.center) to (3.center);
+		\draw [style=swap] (7.center) to (6.center);
+		\draw [style=swap] (10.center) to (11.center);
+		\draw [style=swap] (8.center) to (9.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

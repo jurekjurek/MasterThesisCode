@@ -1,0 +1,27 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (44) at (0, 0) {$=$};
+		\node [style=dkpointadj] (48) at (2, 0.75) {$\hat{r}$};
+		\node [style=dkpointadj] (49) at (8, 0.75) {$\hat{g}$};
+		\node [style=none] (50) at (2, -0.75) {};
+		\node [style=none] (51) at (8, -0.75) {};
+		\node [style=none] (52) at (6, 0) {$+$};
+		\node [style=none] (54) at (-2, -0.75) {};
+		\node [style=wide dkpointdag] (56) at (-3, 0.75) {$a$};
+		\node [style=dkpointadj] (57) at (4, 0.75) {$\hat{s}$};
+		\node [style=none] (58) at (4, -0.75) {};
+		\node [style=dkpointadj] (59) at (10, 0.75) {$\hat{e}$};
+		\node [style=none] (60) at (10, -0.75) {};
+		\node [style=none] (61) at (-4, -0.75) {};
+		\node [style=none] (62) at (-2, 0.75) {};
+		\node [style=none] (63) at (-4, 0.75) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [doubled] (48) to (50.center);
+		\draw [doubled] (49) to (51.center);
+		\draw [doubled] (57) to (58.center);
+		\draw [doubled] (59) to (60.center);
+		\draw [doubled] (63.center) to (61.center);
+		\draw [doubled] (62.center) to (54.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

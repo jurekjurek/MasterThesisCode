@@ -1,0 +1,11 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=dmap] (11) at (0, 0) {$\hat{M}_i$};
+		\node [style=none] (12) at (0, 1.5) {};
+		\node [style=none] (13) at (0, -1.5) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=doubled] (12.center) to (11);
+		\draw [style=doubled] (11) to (13.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

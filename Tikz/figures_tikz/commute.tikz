@@ -1,0 +1,12 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=map] (11) at (0, 0) {$f_i$};
+		\node [style=none] (12) at (0, 1.75) {};
+		\node [style=none] (13) at (0, -1.75) {};
+		\node [style=none] (14) at (-2, -0.25) {$\displaystyle\sum_i$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=none] (12.center) to (11);
+		\draw [style=none] (11) to (13.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

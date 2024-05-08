@@ -1,0 +1,9 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=dkpoint] (0) at (0, -1) {$\rho$};
+		\node [style=upground] (1) at (0, 1) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=doubled] (1) to (0);
+	\end{pgfonlayer}
+\end{tikzpicture}

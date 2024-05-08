@@ -1,0 +1,59 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-4.25, -2) {};
+		\node [style=white dot] (1) at (-2.75, 0) {};
+		\node [style=none] (2) at (-4.25, 2) {};
+		\node [style=none] (3) at (-3.25, -2) {};
+		\node [style=none] (4) at (-3.25, 2) {};
+		\node [style=none] (5) at (-1.25, 2) {};
+		\node [style=none] (6) at (-1.25, -2) {};
+		\node [style=label] (7) at (-2.25, 1.5) {$\dots$};
+		\node [style=none] (9) at (-1, 2.25) {};
+		\node [style=label] (10) at (-2.75, 2.5) {$n$};
+		\node [style=none] (11) at (-4.5, -2.25) {};
+		\node [style=none] (12) at (-4.5, 2.25) {};
+		\node [style=none] (13) at (-1, -2.25) {};
+		\node [style=label] (14) at (-2.75, -2.5) {$m$};
+		\node [style=none] (15) at (0, 0) {$=$};
+		\node [style=copoint] (16) at (3, -1) {$i$};
+		\node [style=copoint] (17) at (4.5, -1) {$i$};
+		\node [style=copoint] (18) at (7, -1) {$i$};
+		\node [style=point] (19) at (3, 1) {$i$};
+		\node [style=point] (20) at (4.5, 1) {$i$};
+		\node [style=point] (21) at (7, 1) {$i$};
+		\node [style=none] (22) at (3, 2) {};
+		\node [style=none] (23) at (4.5, 2) {};
+		\node [style=none] (24) at (7, 2) {};
+		\node [style=none] (25) at (7, -2) {};
+		\node [style=none] (26) at (4.5, -2) {};
+		\node [style=none] (27) at (3, -2) {};
+		\node [style=none] (28) at (1.5, -0.25) {$\displaystyle\sum_i$};
+		\node [style=label] (30) at (-2.25, -1.5) {$\dots$};
+		\node [style=label] (32) at (5.75, 0.75) {$\dots$};
+		\node [style=none] (33) at (7.25, 2.25) {};
+		\node [style=label] (34) at (5, 2.5) {$n$};
+		\node [style=none] (35) at (2.75, 2.25) {};
+		\node [style=none] (36) at (2.75, -2.25) {};
+		\node [style=none] (37) at (7.25, -2.25) {};
+		\node [style=label] (38) at (5, -2.5) {$m$};
+		\node [style=label] (39) at (5.75, -0.75) {$\dots$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [in=-144, out=90] (0.center) to (1);
+		\draw [in=-90, out=36] (1) to (5.center);
+		\draw [in=-119, out=90] (3.center) to (1);
+		\draw [in=-36, out=90] (6.center) to (1);
+		\draw [in=-90, out=144] (1) to (2.center);
+		\draw [in=-90, out=119] (1) to (4.center);
+		\draw [style=small braceedge] (12.center) to (9.center);
+		\draw [style=small braceedge] (13.center) to (11.center);
+		\draw (22.center) to (19);
+		\draw (23.center) to (20);
+		\draw (24.center) to (21);
+		\draw (27.center) to (16);
+		\draw (17) to (26.center);
+		\draw (18) to (25.center);
+		\draw [style=small braceedge] (35.center) to (33.center);
+		\draw [style=small braceedge] (37.center) to (36.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

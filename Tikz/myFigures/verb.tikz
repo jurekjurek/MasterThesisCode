@@ -1,0 +1,54 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-1, 0.5) {};
+		\node [style=none] (1) at (-1, -0.25) {};
+		\node [style=none] (2) at (0, 2.5) {\tt\!*hates*\!};
+		\node [style=white dot] (3) at (-1, -0.25) {};
+		\node [style=none] (4) at (-1.75, -1) {};
+		\node [style=none] (5) at (-0.25, -1) {};
+		\node [style=none] (6) at (-1.75, -1.75) {};
+		\node [style=none] (7) at (-0.25, -1.75) {};
+		\node [style=none] (8) at (0.25, -1) {};
+		\node [style=none] (9) at (1, 0.5) {};
+		\node [style=white dot] (10) at (1, -0.25) {};
+		\node [style=none] (11) at (1.75, -1) {};
+		\node [style=none] (12) at (0.25, -1.75) {};
+		\node [style=none] (13) at (1, -0.25) {};
+		\node [style=none] (14) at (1.75, -1.75) {};
+		\node [style=none] (15) at (2.25, -1) {};
+		\node [style=none] (16) at (-2.25, -1) {};
+		\node [style=none] (17) at (-2.25, 1.75) {};
+		\node [style=none] (18) at (0, 2) {};
+		\node [style=none] (19) at (2.25, 1.75) {};
+		\node [style=none] (20) at (0, -2) {$\underbrace{\hspace{0.1cm}}$};
+		\node [style=none] (21) at (0, -2.5) {};
+		\node [style=none] (22) at (0, -3.25) {};
+		\node [style=none] (28) at (-1.5, 0.5) {};
+		\node [style=none] (29) at (1.5, 0.5) {};
+		\node [style=none] (30) at (0, 1.75) {};
+		\node [style=none] (31) at (-0.75, 0.5) {};
+		\node [style=none] (32) at (0, 0.5) {};
+		\node [style=none] (33) at (0.75, 0.5) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=swap] (1.center) to (0.center);
+		\draw [style=swap] (5.center) to (7.center);
+		\draw [style=swap] (4.center) to (6.center);
+		\draw [style=swap, in=90, out=-15] (3) to (5.center);
+		\draw [style=swap, in=90, out=-165] (3) to (4.center);
+		\draw [style=swap] (13.center) to (9.center);
+		\draw [style=swap] (11.center) to (14.center);
+		\draw [style=swap] (8.center) to (12.center);
+		\draw [style=swap, in=90, out=-15] (10) to (11.center);
+		\draw [style=swap, in=90, out=-165] (10) to (8.center);
+		\draw [style=swap, dashed] (17.center) to (16.center);
+		\draw [style=swap, dashed] (16.center) to (15.center);
+		\draw [style=swap, dashed] (15.center) to (19.center);
+		\draw [style=swap, dashed] (18.center) to (17.center);
+		\draw [style=swap, dashed] (18.center) to (19.center);
+		\draw [style=boldedge] (21.center) to (22.center);
+		\draw [style=thick] (28.center) to (29.center);
+		\draw [style=thick] (30.center) to (28.center);
+		\draw [style=thick] (30.center) to (29.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

@@ -1,0 +1,55 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=gray ddot] (3) at (-6, 1) {};
+		\node [style=dpoint] (0) at (-8, -2) {$0$};
+		\node [style=dpoint] (1) at (-6, -2) {$0$};
+		\node [style=dhadamard] (2) at (-8, -0.5) {$H$};
+		\node [style=white ddot] (4) at (-8, 1) {};
+		\node [style=none] (5) at (-8, 2.5) {};
+		\node [style=none] (6) at (-6, 2.5) {};
+		\node [style=gray ddot] (7) at (-1, 1) {};
+		\node [style=gray ddot] (8) at (-3, -2) {};
+		\node [style=gray ddot] (9) at (-1, -2) {};
+		\node [style=small dhadamard] (10) at (-3, -0.5) {};
+		\node [style=white ddot] (11) at (-3, 1) {};
+		\node [style=none] (12) at (-3, 2.5) {};
+		\node [style=none] (13) at (-1, 2.5) {};
+		\node [style=gray ddot] (14) at (4, 1) {};
+		\node [style=white ddot] (17) at (2, -2) {};
+		\node [style=white ddot] (18) at (2, 1) {};
+		\node [style=none] (19) at (2, 2.5) {};
+		\node [style=none] (20) at (4, 2.5) {};
+		\node [style=gray ddot] (21) at (9, -0.75) {};
+		\node [style=white ddot] (23) at (7, -0.75) {};
+		\node [style=none] (24) at (7, 0.75) {};
+		\node [style=none] (25) at (9, 0.75) {};
+		\node [style=none] (28) at (12, 0.75) {};
+		\node [style=none] (29) at (14, 0.75) {};
+		\node [style=none] (30) at (-4.5, 0) {$\approx$};
+		\node [style=none] (31) at (0.5, 0) {$=$};
+		\node [style=none] (32) at (5.5, 0) {$=$};
+		\node [style=none] (33) at (10.5, 0) {$=$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [doubled] (2) to (0);
+		\draw [doubled] (4) to (2);
+		\draw [doubled] (4) to (3);
+		\draw [doubled] (3) to (1);
+		\draw [doubled] (5.center) to (4);
+		\draw [doubled] (6.center) to (3);
+		\draw [doubled] (10) to (8);
+		\draw [doubled] (11) to (10);
+		\draw [doubled] (11) to (7);
+		\draw [doubled] (7) to (9);
+		\draw [doubled] (12.center) to (11);
+		\draw [doubled] (13.center) to (7);
+		\draw [doubled] (18) to (17);
+		\draw [doubled] (18) to (14);
+		\draw [doubled] (19.center) to (18);
+		\draw [doubled] (20.center) to (14);
+		\draw [doubled] (23) to (21);
+		\draw [doubled] (24.center) to (23);
+		\draw [doubled] (25.center) to (21);
+		\draw [doubled, bend right=90, looseness=1.75] (28.center) to (29.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

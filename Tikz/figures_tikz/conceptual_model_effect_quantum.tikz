@@ -1,0 +1,10 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=dkpointdag] (0) at (0, 0.75) {$c$};
+		\node [style=none] (8) at (0, -0.75) {};
+		\node [style=right label] (22) at (0.25, -0.5) {$H$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [doubled] (0) to (8.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

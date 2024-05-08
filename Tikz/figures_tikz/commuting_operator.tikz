@@ -1,0 +1,34 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=right label] (15) at (0.25, 2.75) {$\mathcal{H}$};
+		\node [style=kpoint] (20) at (0, -3.25) {$\psi$};
+		\node [style=map] (21) at (0, -1.25) {$P_s^a$};
+		\node [style=map] (24) at (0, 1.25) {$P_t^b$};
+		\node [style=none] (4) at (-2, -0.25) {};
+		\node [style=none] (5) at (-2, -2.25) {};
+		\node [style=none] (6) at (2, -2.25) {};
+		\node [style=none] (11) at (2, -0.25) {};
+		\node [style=label, {gray!50}] (13) at (-3, -1.25) {Alice};
+		\node [style=label, {gray!50}] (14) at (-3, 1.25) {Bob};
+		\node [style=none] (25) at (0, 3) {};
+		\node [style=none] (27) at (-2, 2.25) {};
+		\node [style=none] (28) at (-2, 0.25) {};
+		\node [style=none] (29) at (2, 0.25) {};
+		\node [style=none] (30) at (2, 2.25) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=thick gray dashed edge] (5.center)
+			 to (4.center)
+			 to (11.center)
+			 to (6.center)
+			 to cycle;
+		\draw (21) to (20);
+		\draw (24) to (21);
+		\draw (25.center) to (24);
+		\draw [style=thick gray dashed edge] (28.center)
+			 to (27.center)
+			 to (30.center)
+			 to (29.center)
+			 to cycle;
+	\end{pgfonlayer}
+\end{tikzpicture}

@@ -1,0 +1,28 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=white dot] (23) at (0, 0) {};
+		\node [style=none] (34) at (0, 1.5) {};
+		\node [style=none] (35) at (-1, -1) {};
+		\node [style=none] (36) at (1, -1) {};
+		\node [style=point] (37) at (-1, -1.5) {$x_1$};
+		\node [style=point] (38) at (1, -1.5) {$x_2$};
+		\node [style=none] (39) at (3, 0) {$=$};
+		\node [style=none] (40) at (5, 0) {$\displaystyle\sum_{i=1}^n$};
+		\node [style=point] (42) at (8, 1) {$i$};
+		\node [style=copoint] (43) at (7, 0) {$i$};
+		\node [style=copoint] (44) at (9, 0) {$i$};
+		\node [style=point] (45) at (7, -1.5) {$x_1$};
+		\node [style=point] (46) at (9, -1.5) {$x_2$};
+		\node [style=none] (47) at (8, 2.25) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (34.center) to (23);
+		\draw (37) to (35.center);
+		\draw (38) to (36.center);
+		\draw [in=-15, out=90] (36.center) to (23);
+		\draw [in=-165, out=90] (35.center) to (23);
+		\draw (45) to (43);
+		\draw (46) to (44);
+		\draw (47.center) to (42);
+	\end{pgfonlayer}
+\end{tikzpicture}

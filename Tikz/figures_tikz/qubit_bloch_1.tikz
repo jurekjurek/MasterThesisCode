@@ -1,0 +1,9 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=dkpoint] (0) at (-3.5, 0) {$\hat{\psi}$};
+		\node [style=none] (2) at (-3.5, 1.25) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=doubled] (0) to (2.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

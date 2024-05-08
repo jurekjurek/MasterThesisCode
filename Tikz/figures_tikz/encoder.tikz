@@ -1,0 +1,32 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=kpoint] (9) at (-4.5, -2) {$\theta$};
+		\node [style=dmap] (11) at (-4.5, 0) {Encoder VQC};
+		\node [style=none] (13) at (-6, 2) {};
+		\node [style=none] (14) at (-6, 0) {};
+		\node [style=none] (15) at (-3, 0) {};
+		\node [style=none] (16) at (-3, 2) {};
+		\node [style=none] (22) at (-4, 1.75) {$\dots$};
+		\node [style=right label] (23) at (-2.75, 1.75) {$H_n$};
+		\node [style=right label] (24) at (-5.75, 1.75) {$H_1$};
+		\node [style=none] (25) at (0, 0) {$=$};
+		\node [style=dmap] (26) at (3, 0) {$\hat{U}(\theta_1)$};
+		\node [style=dkpoint] (29) at (3, -2) {$0$};
+		\node [style=none] (30) at (3, 2) {};
+		\node [style=right label] (31) at (3.25, 1.75) {$H_1$};
+		\node [style=dmap] (32) at (8, 0) {$\hat{U}(\theta_n)$};
+		\node [style=dkpoint] (33) at (8, -2) {$0$};
+		\node [style=none] (34) at (8, 2) {};
+		\node [style=right label] (35) at (8.25, 1.75) {$H_n$};
+		\node [style=none] (36) at (5.5, 0) {$\dots$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [doubled] (16.center) to (15.center);
+		\draw [doubled] (13.center) to (14.center);
+		\draw [none] (11) to (9);
+		\draw [doubled] (29) to (26);
+		\draw [doubled] (30.center) to (26);
+		\draw [doubled] (33) to (32);
+		\draw [doubled] (34.center) to (32);
+	\end{pgfonlayer}
+\end{tikzpicture}

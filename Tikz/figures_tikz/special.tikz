@@ -1,0 +1,18 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=point] (0) at (-6, -0.25) {$\psi$};
+		\node [style=none] (2) at (-6, 1) {};
+		\node [style=copoint] (3) at (1.5, 0.25) {$\pi$};
+		\node [style=none] (4) at (1.5, -1) {};
+		\node [style=scalar] (5) at (9, 0) {$\lambda$};
+		\node [style=label] (6) at (-8.5, 0) {states:};
+		\node [style=right label] (7) at (-5.75, 0.75) {$A$};
+		\node [style=right label] (8) at (1.75, -0.75) {$A$};
+		\node [style=label] (9) at (-1, 0) {effects:};
+		\node [style=label] (10) at (6.5, 0) {numbers:};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (0) to (2.center);
+		\draw (3) to (4.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

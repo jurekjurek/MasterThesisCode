@@ -1,0 +1,33 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=box] (0) at (2, 1) {$\sigma_1$};
+		\node [style=box] (1) at (2, -1) {$\sigma_2$};
+		\node [style=none] (2) at (4.25, 0) {=};
+		\node [style=none] (3) at (-1.5, 0) {=};
+		\node [style=none] (4) at (2, 1.5) {};
+		\node [style=none] (5) at (0.5, 1.5) {};
+		\node [style=none] (6) at (2, -1.5) {};
+		\node [style=none] (7) at (0.5, -1.5) {};
+		\node [style=box] (8) at (6.5, 0) {$\bar{\sigma}_1$};
+		\node [style=box] (9) at (8, 0) {$\sigma_2$};
+		\node [style=none] (10) at (6.5, 0.5) {};
+		\node [style=none] (11) at (8, 0.5) {};
+		\node [style=none] (12) at (6.5, -0.5) {};
+		\node [style=none] (13) at (8, -0.5) {};
+		\node [style=none] (14) at (-4, 0) {\textit{Tr$(\sigma_2 \sigma_1)$}};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (5.center) to (7.center);
+		\draw [bend right=90, looseness=1.75] (7.center) to (6.center);
+		\draw (6.center) to (1);
+		\draw (0) to (1);
+		\draw [bend left=270, looseness=1.50] (4.center) to (5.center);
+		\draw (4.center) to (0);
+		\draw (10.center) to (8);
+		\draw (8) to (12.center);
+		\draw [bend right=90, looseness=1.25] (12.center) to (13.center);
+		\draw (13.center) to (9);
+		\draw (9) to (11.center);
+		\draw [bend left=270, looseness=1.25] (11.center) to (10.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

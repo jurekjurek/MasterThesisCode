@@ -1,0 +1,9 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=dkpointadj] (16) at (-5, 0) {$\phi_i$};
+		\node [style=none] (17) at (-5, -1.75) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=doubled] (17.center) to (16);
+	\end{pgfonlayer}
+\end{tikzpicture}

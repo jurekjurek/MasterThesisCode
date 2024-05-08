@@ -7,7 +7,7 @@ from qiskit.circuit import Parameter
 from qiskit import QuantumCircuit, QuantumRegister
 from qiskit.converters import dag_to_circuit, circuit_to_dag
 
-def SetUpDiags(circuit: QuantumCircuit, parameterDict: dict, WordsToForget: list = ['woman', 'person', 'meal'], show: bool = False):
+def SetUpDiags(circuit: QuantumCircuit, parameterDict: dict, WordsToForget: list = ['woman', 'person', 'meal'], oneQubit = True, show: bool = True):
     '''
     Given a circuit as an Input, we remove the noun parameters belonging to the first noun in the sentence. 
 
@@ -44,11 +44,14 @@ def SetUpDiags(circuit: QuantumCircuit, parameterDict: dict, WordsToForget: list
                 # store the parameter in a list
                 indexList.append(i)
 
+                print('we forget the following word: ', word)
+
                 qubitOfInterest = circuitData[i].qubits[0].index
 
                 if '†' in str(circuitData[i].operation.params):
                     dagger = True 
                     
+                # break
 
 
     # FIRST: UPDATE THE PARAMETERS, THEN REMOVE THE GATES FROM THE CIRCUIT 
@@ -65,19 +68,33 @@ def SetUpDiags(circuit: QuantumCircuit, parameterDict: dict, WordsToForget: list
         if str(params[i]) in parameterDict:
             circuit = circuit.assign_parameters({params[i]: (parameterDict[str(params[i])]/(2*np.pi))})
         else: 
+            print('TESTSETESTSETS')
             # if the model only learned parameters for the word that are not daggered
             if '†' in str(params[i]):
-               tempParam = str(params[i])
-               # reverse string 
-               tempParam = tempParam[::-1]
+                if oneQubit == True: 
+                    tempParam = str(params[i])
+                    # reverse string 
+                    tempParam = tempParam[::-1]
 
-               # remove elements 2,3,4,5
-               tempParam = tempParam[:2] + 'n__' + tempParam[5:]
+                    # remove elements 2,3,4,5
+                    tempParam = tempParam[:2] + 'n__' + tempParam[5:]
 
-               tempParam = tempParam[::-1]
-               print(tempParam)             
+                    tempParam = tempParam[::-1]
+                    print(tempParam)             
 
-               circuit = circuit.assign_parameters({params[i]: (parameterDict[tempParam]/(2*np.pi))}) 
+                    circuit = circuit.assign_parameters({params[i]: -(parameterDict[tempParam]/(2*np.pi))}) 
+                if oneQubit == False:
+                    tempParam = str(params[i])
+                    # reverse string 
+                    tempParam = tempParam[::-1]
+
+                    # remove elements 2,3,4,5
+                    tempParam = tempParam[:2] + 'n__' + tempParam[5:]
+
+                    tempParam = tempParam[::-1]
+                    print(tempParam)             
+
+                    circuit = circuit.assign_parameters({params[i]: (parameterDict[tempParam]/(2*np.pi))}) 
 
     if show: 
         print('Circuit wiht new parameters: ')
@@ -86,8 +103,8 @@ def SetUpDiags(circuit: QuantumCircuit, parameterDict: dict, WordsToForget: list
 
     # remove the parameters of the words we want to forget
     circuit.data.pop(indexList[0])
-    # circuit.data.pop(indexList[1]-1)
-    # circuit.data.pop(indexList[2]-2)
+    circuit.data.pop(indexList[1]-1)
+    circuit.data.pop(indexList[2]-2)
 
     if show: 
         print('circuit with removed words to forget: ')
@@ -103,6 +120,8 @@ def SetUpDiags(circuit: QuantumCircuit, parameterDict: dict, WordsToForget: list
 
             if str(circuitData[i].operation.name) == 'measure': 
                 if circuitData[i].qubits[0].index == qubitOfInterest: 
+
+                    # remove measurement
                     circuit.data.pop(i)
                     break
         
@@ -129,6 +148,10 @@ def SetUpDiags(circuit: QuantumCircuit, parameterDict: dict, WordsToForget: list
         circuit = bellCircuit.compose(circuit) #, qubits=[0,1,2,3,4])
 
         # now, we have our circuit 
+
+    if show: 
+        print('circuit with discarded qubit: ')
+        print(circuit)
 
     circuit.draw(output= 'mpl', filename='testtest.png')
 

@@ -1,0 +1,69 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-6.5, -0.5) {};
+		\node [style=none] (1) at (-3.5, -0.5) {};
+		\node [style=none] (4) at (-7.75, 2.5) {};
+		\node [style=none] (5) at (-7.75, -2.5) {};
+		\node [style=none] (6) at (-5.25, -2.5) {};
+		\node [style=none] (7) at (-4.75, -2.5) {};
+		\node [style=none] (8) at (-2.25, -2.5) {};
+		\node [style=none] (9) at (-2.25, 2.5) {};
+		\node [style=none] (10) at (-4.75, 2.5) {};
+		\node [style=none] (11) at (-5.25, 2.5) {};
+		\node [style=none] (12) at (-8.5, -0.5) {};
+		\node [style=none] (13) at (-1.5, -0.5) {};
+		\node [style=left label, gray] (14) at (-8.75, -0.5) {$t_0$};
+		\node [style=dkpointtrans] (15) at (-6.5, 0.5) {$i$};
+		\node [style=none] (18) at (-8.5, 1.75) {};
+		\node [style=none] (19) at (-1.5, 1.75) {};
+		\node [style=left label, gray] (20) at (-8.75, 1.75) {$t_1$};
+		\node [style=none] (21) at (0, 0) {$=$};
+		\node [style=none] (24) at (2.5, 2.5) {};
+		\node [style=none] (25) at (2.5, -2.5) {};
+		\node [style=none] (26) at (5, -2.5) {};
+		\node [style=none] (27) at (5.5, -2.5) {};
+		\node [style=none] (28) at (8, -2.5) {};
+		\node [style=none] (29) at (8, 2.5) {};
+		\node [style=none] (30) at (5.5, 2.5) {};
+		\node [style=none] (31) at (5, 2.5) {};
+		\node [style=none] (32) at (1.75, -0.5) {};
+		\node [style=none] (33) at (8.75, -0.5) {};
+		\node [style=left label, gray] (34) at (1.5, -0.5) {$t_0$};
+		\node [style=none] (36) at (1.75, 1.75) {};
+		\node [style=none] (37) at (8.75, 1.75) {};
+		\node [style=left label, gray] (38) at (1.5, 1.75) {$t_1$};
+		\node [style=none] (39) at (-3.5, 2) {};
+		\node [style=dkpoint] (40) at (6.75, 0.75) {$i$};
+		\node [style=none] (41) at (6.75, 2) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [doubled, bend left=90, looseness=1.75] (1.center) to (0.center);
+		\draw [style=thick gray dashed edge] (5.center)
+			 to (4.center)
+			 to (11.center)
+			 to (6.center)
+			 to cycle;
+		\draw [style=thick gray dashed edge] (7.center)
+			 to (10.center)
+			 to (9.center)
+			 to (8.center)
+			 to cycle;
+		\draw [timeline] (13.center) to (12.center);
+		\draw [doubled] (15) to (0.center);
+		\draw [timeline] (19.center) to (18.center);
+		\draw [style=thick gray dashed edge] (25.center)
+			 to (24.center)
+			 to (31.center)
+			 to (26.center)
+			 to cycle;
+		\draw [style=thick gray dashed edge] (27.center)
+			 to (30.center)
+			 to (29.center)
+			 to (28.center)
+			 to cycle;
+		\draw [timeline] (33.center) to (32.center);
+		\draw [timeline] (37.center) to (36.center);
+		\draw [doubled] (39.center) to (1.center);
+		\draw [doubled] (41.center) to (40);
+	\end{pgfonlayer}
+\end{tikzpicture}

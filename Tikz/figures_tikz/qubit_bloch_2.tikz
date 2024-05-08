@@ -1,0 +1,15 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=point] (3) at (1, 0) {$0$};
+		\node [style=none] (4) at (1, 1.25) {};
+		\node [style=none] (6) at (-0.5, 0) {$\cos \dfrac{\theta}{2}$};
+		\node [style=none] (7) at (2, 0) {$+$};
+		\node [style=point] (8) at (6, 0) {$1$};
+		\node [style=none] (9) at (6, 1.25) {};
+		\node [style=none] (10) at (4, 0) {$\sin \dfrac{\theta}{2} e^{i\alpha}$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (3) to (4.center);
+		\draw (8) to (9.center);
+	\end{pgfonlayer}
+\end{tikzpicture}
