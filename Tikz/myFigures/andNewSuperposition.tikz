@@ -1,0 +1,76 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-11.5, 0) {$\rho_{\texttt{and}}$};
+		\node [style=none] (1) at (-9, 0) {$=$};
+		\node [style=none] (2) at (-3.5, -2.5) {};
+		\node [style=none] (3) at (0, -2.5) {};
+		\node [style=none] (4) at (-1.25, 0.75) {};
+		\node [style=none] (5) at (0, 0.75) {};
+		\node [style=white dot] (6) at (-1.75, 0.25) {};
+		\node [style=none] (7) at (0, -1.5) {};
+		\node [style=none] (8) at (-3.5, -1.5) {};
+		\node [style=none] (9) at (-3.5, 0.75) {};
+		\node [style=none] (10) at (-1.75, -0.25) {};
+		\node [style=none] (11) at (-2.25, 0.75) {};
+		\node [style=none] (12) at (-3.5, -2) {$N \otimes N$};
+		\node [style=none] (13) at (-1.75, -1.25) {};
+		\node [style=none] (14) at (-1.75, -0.75) {$N \otimes N$};
+		\node [style=none] (15) at (0, -2) {$N \otimes N$};
+		\node [style=none] (17) at (2, 0) {$+$};
+		\node [style=none] (18) at (-1.75, -2.5) {};
+		\node [style=none] (19) at (6.25, -1.5) {};
+		\node [style=none] (20) at (10.25, -1.5) {};
+		\node [style=none] (21) at (8.75, 0.5) {};
+		\node [style=none] (22) at (10.25, 0.5) {};
+		\node [style=white dot] (23) at (8.25, 0) {};
+		\node [style=none] (24) at (10.25, -0.5) {};
+		\node [style=none] (25) at (6.25, -0.5) {};
+		\node [style=none] (26) at (6.25, 0.5) {};
+		\node [style=none] (27) at (8.25, -0.5) {};
+		\node [style=none] (28) at (7.75, 0.5) {};
+		\node [style=none] (29) at (6.25, -1) {$N$};
+		\node [style=none] (31) at (8.25, -1) {$N$};
+		\node [style=none] (32) at (10.25, -1) {$N$};
+		\node [style=none] (34) at (8.25, -1.5) {};
+		\node [style=none] (36) at (9.5, -2) {};
+		\node [style=none] (37) at (8.5, -3) {};
+		\node [style=none] (38) at (10.5, -3) {};
+		\node [style=none] (39) at (9.5, -3) {};
+		\node [style=white dot] (40) at (9.5, -2) {};
+		\node [style=white dot] (41) at (9.5, 0.5) {};
+		\node [style=none] (42) at (9.5, -0.5) {};
+		\node [style=none] (43) at (9.5, -1) {$N$};
+		\node [style=none] (44) at (9.5, -1.5) {};
+		\node [style=none] (45) at (8.5, -4) {};
+		\node [style=none] (46) at (8.5, -3) {};
+		\node [style=none] (47) at (8.5, -3.5) {$N$};
+		\node [style=none] (48) at (9.5, -4) {};
+		\node [style=none] (49) at (9.5, -3) {};
+		\node [style=none] (50) at (9.5, -3.5) {$N$};
+		\node [style=none] (51) at (10.5, -4) {};
+		\node [style=none] (52) at (10.5, -3) {};
+		\node [style=none] (53) at (10.5, -3.5) {$N$};
+		\node [style=none] (54) at (-6, 0) {$\alpha\,\, \cdot$};
+		\node [style=none] (55) at (4.25, 0) {$\beta \,\, \cdot$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=none] (5.center) to (7.center);
+		\draw [style=none, bend left=90, looseness=1.75] (9.center) to (11.center);
+		\draw [style=none, bend left=90, looseness=1.75] (4.center) to (5.center);
+		\draw [style=none, bend right=90, looseness=1.75] (11.center) to (4.center);
+		\draw [style=none] (9.center) to (8.center);
+		\draw (6) to (10.center);
+		\draw (13.center) to (18.center);
+		\draw [style=none] (22.center) to (24.center);
+		\draw [style=none, bend left=90, looseness=1.75] (26.center) to (28.center);
+		\draw [style=none, bend left=90, looseness=1.75] (21.center) to (22.center);
+		\draw [style=none, bend right=90, looseness=1.75] (28.center) to (21.center);
+		\draw [style=none] (26.center) to (25.center);
+		\draw (23) to (27.center);
+		\draw [bend right=45] (36.center) to (37.center);
+		\draw (36.center) to (39.center);
+		\draw [bend left=45] (36.center) to (38.center);
+		\draw (41) to (42.center);
+		\draw (44.center) to (40);
+	\end{pgfonlayer}
+\end{tikzpicture}

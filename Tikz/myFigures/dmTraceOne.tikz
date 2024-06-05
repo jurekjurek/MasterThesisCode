@@ -1,7 +1,9 @@
 \begin{tikzpicture}
 	\begin{pgfonlayer}{nodelayer}
-		\node [style=dkpoint] (0) at (0, -1) {$\rho$};
-		\node [style=upground] (1) at (0, 1) {};
+		\node [style=dkpoint] (0) at (-2, -0.75) {$\rho$};
+		\node [style=upground] (1) at (-2, 0.75) {};
+		\node [style=none] (2) at (0.5, -0.25) {$=$};
+		\node [style=none] (3) at (2, -0.25) {$1$};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
 		\draw [style=doubled] (1) to (0);

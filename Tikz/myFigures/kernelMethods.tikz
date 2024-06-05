@@ -1,0 +1,42 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-7, 4) {};
+		\node [style=none] (1) at (-7, 0) {};
+		\node [style=none] (2) at (-3, 0) {};
+		\node [style=none] (3) at (-4.75, -0.75) {\texttt{original space}};
+		\node [style=none] (4) at (4, 4) {};
+		\node [style=none] (5) at (4, 0) {};
+		\node [style=none] (6) at (8, 0) {};
+		\node [style=none] (7) at (6, -0.75) {\texttt{feature space}};
+		\node [style=box, color=blue, minimum width=2mm, minimum height=2mm] (8) at (-4, 2.5) {};
+		\node [style=dot, color=red, fill=red] (9) at (-5.5, 2.5) {};
+		\node [style=box, color=blue, minimum width=2mm, minimum height=2mm] (10) at (-5.5, 1) {};
+		\node [style=dot, color=red, fill=red] (11) at (-4, 1) {};
+		\node [style=none] (12) at (-1, 1.5) {};
+		\node [style=none] (13) at (1, 1.5) {};
+		\node [style=box, color=blue, minimum width=2mm, minimum height=2mm] (14) at (5, 1.5) {};
+		\node [style=box, color=blue, minimum width=2mm, minimum height=2mm] (15) at (6.5, 0.75) {};
+		\node [style=dot, color=red, fill=red] (16) at (7.5, 2) {};
+		\node [style=dot, color=red, fill=red] (17) at (6, 3.25) {};
+		\node [style=none] (18) at (3, 4.5) {};
+		\node [style=none] (19) at (9.25, -0.75) {};
+		\node [style=none] (20) at (3.25, 2.75) {};
+		\node [style=none] (21) at (2.5, 2.25) {};
+		\node [style=none] (22) at (4.5, 2.25) {};
+		\node [style=none] (23) at (5.75, 0.5) {};
+		\node [style=none] (24) at (2.5, 0.5) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=diredge, color=black] (1.center) to (2.center);
+		\draw [style=diredge, color=black] (1.center) to (0.center);
+		\draw [style=diredge, color=black] (5.center) to (6.center);
+		\draw [style=diredge, color=black] (5.center) to (4.center);
+		\draw [style=thickdiredge] (12.center) to (13.center);
+		\draw [style=dashed] (18.center) to (19.center);
+		\draw [style=diredge, color=gray] (5.center) to (24.center);
+		\draw [style=diredge, color=gray] (5.center) to (21.center);
+		\draw [style=diredge, color=gray] (5.center) to (20.center);
+		\draw [style=diredge, color=gray] (5.center) to (22.center);
+		\draw [style=diredge, color=gray] (5.center) to (23.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

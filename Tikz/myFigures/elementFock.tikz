@@ -1,0 +1,10 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=element] (0) at (0, 0.5) {$v$};
+		\node [style=none] (1) at (0, -1.25) {};
+		\node [style=none] (2) at (0.5, -0.5) {$V$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=thickArr] (0) to (1.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

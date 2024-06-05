@@ -1,17 +1,17 @@
 \begin{tikzpicture}
 	\begin{pgfonlayer}{nodelayer}
-		\node [style=gray ddot] (0) at (2.5, 1) {};
-		\node [style=none] (1) at (0.5, -0.5) {};
-		\node [style=none] (2) at (2.5, -0.5) {};
-		\node [style=white ddot] (4) at (0.5, 1) {};
-		\node [style=none] (5) at (0.5, 2.5) {};
-		\node [style=none] (6) at (2.5, 2.5) {};
+		\node [style=gray dot] (0) at (0.5, 0.5) {};
+		\node [style=none] (1) at (-0.5, -0.5) {};
+		\node [style=none] (2) at (0.5, -0.5) {};
+		\node [style=white dot] (4) at (-0.5, 0.5) {};
+		\node [style=none] (5) at (-0.5, 1.5) {};
+		\node [style=none] (6) at (0.5, 1.5) {};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
-		\draw [doubled] (4) to (0);
-		\draw [doubled] (0) to (2.center);
-		\draw [doubled] (5.center) to (4);
-		\draw [doubled] (6.center) to (0);
-		\draw [doubled] (4) to (1.center);
+		\draw [none] (4) to (0);
+		\draw [none] (0) to (2.center);
+		\draw [none] (5.center) to (4);
+		\draw [none] (6.center) to (0);
+		\draw [none] (4) to (1.center);
 	\end{pgfonlayer}
 \end{tikzpicture}

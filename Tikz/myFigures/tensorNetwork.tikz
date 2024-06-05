@@ -1,0 +1,30 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=dot, color=blue, fill=blue, inner sep=0.05cm] (0) at (-5, 0) {};
+		\node [style=none] (1) at (-5, -1) {};
+		\node [style=dot, color=green, fill=green, inner sep=0.05cm] (2) at (0, 0) {};
+		\node [style=none] (3) at (-1, 0) {};
+		\node [style=none] (4) at (1, 0) {};
+		\node [style=dot, color=red, fill=red, inner sep=0.05cm] (5) at (5.5, 0) {};
+		\node [style=none] (6) at (4.5, 0) {};
+		\node [style=none] (7) at (6.5, 0) {};
+		\node [style=none] (8) at (5.5, -1) {};
+		\node [style=none] (9) at (4, 0) {$\mu$};
+		\node [style=none] (10) at (7, 0) {$\nu$};
+		\node [style=none] (11) at (5.5, -1.5) {$\rho$};
+		\node [style=none] (12) at (-5, 1) {$v_\mu$};
+		\node [style=none] (13) at (0, 1) {$M_{\mu \nu}$};
+		\node [style=none] (14) at (5.5, 1) {$T_{\mu \nu \rho}$};
+		\node [style=none] (15) at (-1.5, 0) {$\mu$};
+		\node [style=none] (16) at (-5, -1.5) {$\mu$};
+		\node [style=none] (17) at (1.5, 0) {$\nu$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (2) to (4.center);
+		\draw (3.center) to (2);
+		\draw (6.center) to (5);
+		\draw (5) to (8.center);
+		\draw (5) to (7.center);
+		\draw (0) to (1.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

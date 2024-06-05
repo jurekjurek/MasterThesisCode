@@ -33,7 +33,8 @@ from lambeq.backend.quantum import (
     Rotation,
     Rx, Ry, Rz, 
     CRy, 
-    X
+    X,
+    SWAP
 )
 
 from lambeq import CircuitAnsatz
@@ -105,8 +106,14 @@ def noun_ansatz(paramString: str, parameterDict, circuitt):
     partToAdd = Ry(phi1) @ Id(1) >> CRy(phi3_cos) >> X @ Id(1) >> CRy(phi2_cos) >> X @ Id(1)
 
     # if the word is upside down, we flip the whole circuit 
+    # print('debugdebugdebug, the thing we are going to add: ')
+    # partToAdd.draw()
+    
     if dagger:
-        circuitt >>= partToAdd.dagger()
+        partToAddNew = SWAP >> partToAdd
+        # print('and the corresponding dagger circuit: ')
+        # partToAddNew.dagger().draw()
+        circuitt >>= partToAddNew.dagger()
 
     # if the word is not upside down, we just append the circuit as is 
     else: 
@@ -371,8 +378,6 @@ class IQPAmplitudeEncode2QB(CircuitAnsatz):
                 circuit >>= hadamards
 
         return circuit  # type: ignore[return-value]
-
-
 
 
 

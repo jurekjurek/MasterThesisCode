@@ -1,0 +1,22 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=white dot] (0) at (1.5, 0) {};
+		\node [style=none] (1) at (1.5, 1) {};
+		\node [style=none] (2) at (0.5, -1) {};
+		\node [style=none] (3) at (2.5, -1) {};
+		\node [style=none] (4) at (1.5, 1.5) {\texttt{cat}};
+		\node [style=white dot] (5) at (5.5, 0) {};
+		\node [style=none] (6) at (5.5, 1) {};
+		\node [style=none] (7) at (4.5, -1) {};
+		\node [style=none] (8) at (6.5, -1) {};
+		\node [style=none] (9) at (5.5, 1.5) {\texttt{dog}};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [bend right=45] (0) to (2.center);
+		\draw [bend left=45] (0) to (3.center);
+		\draw (1.center) to (0);
+		\draw [bend right=45] (5) to (7.center);
+		\draw [bend left=45] (5) to (8.center);
+		\draw (6.center) to (5);
+	\end{pgfonlayer}
+\end{tikzpicture}

@@ -1,0 +1,42 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=hadamard, minimum width=8mm, minimum height=8mm] (0) at (4, 1) {\large $H$};
+		\node [style=none] (1) at (2, 1) {};
+		\node [style=none] (2) at (5.5, 1) {};
+		\node [style=none] (3) at (1.25, 1) {\large $\ket{0}$};
+		\node [style=black dot] (4) at (8, 1) {};
+		\node [style=none] (5) at (5.5, 1) {};
+		\node [style=none] (6) at (9.5, 1) {};
+		\node [style=none] (8) at (2, -1) {};
+		\node [style=none] (9) at (5.5, -1) {};
+		\node [style=none] (10) at (1.25, -1) {\large $\ket{0}$};
+		\node [style=none] (12) at (5.5, -1) {};
+		\node [style=none] (13) at (9.5, -1) {};
+		\node [style=none] (29) at (9.5, -1) {};
+		\node [style=none] (30) at (11.5, 1) {};
+		\node [style=none] (31) at (10.5, -1) {$\ldots$};
+		\node [style=none] (32) at (8, -1) {$\bigoplus$};
+		\node [style=none] (33) at (10.5, 1.5) {\texttt{noun-qubit}};
+		\node [style=none] (34) at (10, -1.75) {\texttt{discarded}};
+		\node [style=none] (35) at (10, -2.5) {\texttt{qubit}};
+		\node [style=hadamard, minimum width=8mm, minimum height=8mm] (36) at (-7, 0) {$U_{\texttt{noun}}$};
+		\node [style=none] (37) at (-9, 0) {};
+		\node [style=none] (38) at (-4.5, 0) {};
+		\node [style=none] (39) at (-9.75, 0) {\large $\ket{0}$};
+		\node [style=none] (40) at (-2, 0) {$\mapsto$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=none] (1.center) to (0);
+		\draw [style=none] (0) to (2.center);
+		\draw [style=none] (5.center) to (4);
+		\draw [style=none] (4) to (6.center);
+		\draw (6.center) to (30.center);
+		\draw (13.center) to (29.center);
+		\draw (8.center) to (12.center);
+		\draw (12.center) to (32.center);
+		\draw (32.center) to (4);
+		\draw (32.center) to (13.center);
+		\draw [style=none] (37.center) to (36);
+		\draw [style=none] (36) to (38.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

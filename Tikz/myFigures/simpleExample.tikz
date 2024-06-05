@@ -1,0 +1,44 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (15) at (-5.5, 2) {};
+		\node [style=none] (16) at (-3, 2) {};
+		\node [style=none] (17) at (-6.25, 2) {\large $\ket{0}$};
+		\node [style=none] (19) at (-3, 2) {};
+		\node [style=none] (20) at (4.5, 2) {};
+		\node [style=none] (22) at (-5.5, 0) {};
+		\node [style=none] (23) at (-3, 0) {};
+		\node [style=none] (24) at (-6.25, 0) {\large $\ket{0}$};
+		\node [style=none] (26) at (-3, 0) {};
+		\node [style=none] (27) at (5.5, 0) {};
+		\node [style=none] (28) at (4.5, 2) {};
+		\node [style=black dot] (32) at (-1.5, 2) {};
+		\node [style=hadamard, minimum width=7mm, minimum height=6mm] (33) at (1, 2) { $X$};
+		\node [style=hadamard, minimum width=7mm, minimum height=6mm] (34) at (-3.75, 2) { $H$};
+		\node [style=hadamard, minimum width=7mm, minimum height=6mm] (35) at (-1.5, 0) { $O_1$};
+		\node [style=black dot] (36) at (3, 2) {};
+		\node [style=none] (38) at (-5.5, -2) {};
+		\node [style=none] (39) at (-3, -2) {};
+		\node [style=none] (40) at (-6.25, -2) {\large $\ket{0}$};
+		\node [style=none] (41) at (-3, -2) {};
+		\node [style=none] (42) at (5.5, -2) {};
+		\node [style=hadamard, minimum width=7mm, minimum height=6mm] (44) at (3, -2) { $O_2$};
+		\node [style=none] (45) at (5.25, 2) {\ldots};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (20.center) to (28.center);
+		\draw (32) to (35);
+		\draw (15.center) to (34);
+		\draw (34) to (19.center);
+		\draw (19.center) to (32);
+		\draw (32) to (33);
+		\draw (33) to (36);
+		\draw (36) to (20.center);
+		\draw (26.center) to (35);
+		\draw (22.center) to (26.center);
+		\draw (44) to (42.center);
+		\draw (38.center) to (41.center);
+		\draw (35) to (27.center);
+		\draw (41.center) to (44);
+		\draw (44) to (36);
+	\end{pgfonlayer}
+\end{tikzpicture}

@@ -1,0 +1,15 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (0, 5) {\texttt{Noun space}};
+		\node [style=none] (1) at (-2, 4) {};
+		\node [style=none] (2) at (-2, 0) {};
+		\node [style=none] (3) at (2, 0) {};
+		\node [style=none] (4) at (2, -0.5) {$\ket{n}$};
+		\node [style=none] (5) at (-3.25, 3.75) {$\ket{\Diamond n / n}$};
+		\node [style=none] (6) at (0, 2) {$\ket{\texttt{cat}}$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=diredge] (2.center) to (3.center);
+		\draw [style=diredge] (2.center) to (1.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

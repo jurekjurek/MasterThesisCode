@@ -2,9 +2,9 @@
 	\begin{pgfonlayer}{nodelayer}
 		\node [style=none] (0) at (0, -0.75) {};
 		\node [style=none] (1) at (0, 0.25) {};
-		\node [style=none] (2) at (0, 1.75) {\!\!{\tt black}\!\!};
-		\node [style=none] (3) at (-9, 1.75) {\!\!\!{\tt Bob}\!\!\!};
-		\node [style=none] (4) at (9, 1.75) {\ {\tt hates}\ };
+		\node [style=none] (2) at (0, 2) {\!\!{\tt Adjective}\!\!};
+		\node [style=none] (3) at (-9, 2) {\!\!\!{\tt Noun}\!\!\!};
+		\node [style=none] (4) at (9, 2) {\ {\tt  Verb}\ };
 		\node [style=none] (5) at (9, -0.75) {};
 		\node [style=none] (6) at (9, 0.25) {};
 		\node [style=none] (7) at (-9, -0.75) {};

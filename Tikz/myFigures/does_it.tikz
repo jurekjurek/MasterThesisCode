@@ -1,0 +1,58 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-13, 0) {$\rho_{\texttt{does it}}$};
+		\node [style=none] (1) at (-10.75, 0) {$=$};
+		\node [style=white dot] (2) at (-8, 1) {};
+		\node [style=white dot] (3) at (-8, 0) {};
+		\node [style=none] (4) at (-8.75, -0.75) {};
+		\node [style=none] (5) at (-6.5, -1.5) {};
+		\node [style=none] (6) at (-8.75, -1.25) {$N \otimes S$};
+		\node [style=none] (7) at (-6.5, -2) {$N \otimes S$};
+		\node [style=white dot] (8) at (-3.5, 1) {};
+		\node [style=white dot] (9) at (-3.5, 0) {};
+		\node [style=none] (10) at (-4.25, -0.75) {};
+		\node [style=none] (11) at (-2, -1.5) {};
+		\node [style=none] (12) at (-4.25, -1.25) {$N \otimes S$};
+		\node [style=none] (13) at (-2, -2) {$N \otimes S$};
+		\node [style=white dot] (14) at (1.25, 1) {};
+		\node [style=white dot] (15) at (1.25, 0) {};
+		\node [style=none] (16) at (0.5, -0.75) {};
+		\node [style=none] (17) at (2.75, -1.5) {};
+		\node [style=none] (18) at (0.5, -1.25) {$N \otimes S$};
+		\node [style=none] (19) at (2.75, -2) {$N \otimes S$};
+		\node [style=white dot] (20) at (5.75, 1) {};
+		\node [style=white dot] (21) at (5.75, 0) {};
+		\node [style=none] (22) at (5, -0.75) {};
+		\node [style=none] (23) at (7.25, -1.5) {};
+		\node [style=none] (24) at (5, -1.25) {$N \otimes S$};
+		\node [style=none] (25) at (7.25, -2) {$N \otimes S$};
+		\node [style=white dot] (26) at (10.25, 1) {};
+		\node [style=white dot] (27) at (10.25, 0) {};
+		\node [style=none] (28) at (9.5, -0.75) {};
+		\node [style=none] (29) at (11.75, -1.5) {};
+		\node [style=none] (30) at (9.5, -1.25) {$N \otimes S$};
+		\node [style=none] (31) at (11.75, -2) {$N \otimes S$};
+		\node [style=none] (32) at (-10.25, -6) {$+$};
+		\node [style=none] (33) at (2, -6.25) {};
+		\node [style=none] (34) at (0.5, -5.5) {};
+		\node [style=none] (35) at (8.75, -8.75) {};
+		\node [style=none] (36) at (6, 3.75) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [bend left=45] (4.center) to (3);
+		\draw [bend left=45] (3) to (5.center);
+		\draw (3) to (2);
+		\draw [bend left=45] (10.center) to (9);
+		\draw [bend left=45] (9) to (11.center);
+		\draw (9) to (8);
+		\draw [bend left=45] (16.center) to (15);
+		\draw [bend left=45] (15) to (17.center);
+		\draw (15) to (14);
+		\draw [bend left=45] (22.center) to (21);
+		\draw [bend left=45] (21) to (23.center);
+		\draw (21) to (20);
+		\draw [bend left=45] (28.center) to (27);
+		\draw [bend left=45] (27) to (29.center);
+		\draw (27) to (26);
+	\end{pgfonlayer}
+\end{tikzpicture}

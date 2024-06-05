@@ -1,11 +1,11 @@
 \begin{tikzpicture}
 	\begin{pgfonlayer}{nodelayer}
-		\node [style=vertex] (4) at (0, 1) {};
+		\node [style=vertex] (4) at (0, 1.5) {};
 		\node [style=none] (5) at (0, 0) {$\bigoplus$};
-		\node [style=none] (6) at (-1, 1) {};
-		\node [style=none] (7) at (-1, 0) {};
-		\node [style=none] (8) at (1, 0) {};
-		\node [style=none] (9) at (1, 1) {};
+		\node [style=none] (6) at (-1.5, 1.5) {};
+		\node [style=none] (7) at (-1.5, 0) {};
+		\node [style=none] (8) at (1.5, 0) {};
+		\node [style=none] (9) at (1.5, 1.5) {};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
 		\draw (6.center) to (4);

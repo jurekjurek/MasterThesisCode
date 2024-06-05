@@ -1,0 +1,46 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=dot, color=red, fill=red, inner sep=0.05cm] (5) at (1.75, 0) {};
+		\node [style=none] (7) at (2.75, 0) {};
+		\node [style=none] (8) at (1.75, -1) {};
+		\node [style=none] (13) at (1.75, -1.5) {$\rho_1$};
+		\node [style=dot, color=red, fill=red, inner sep=0.05cm] (14) at (3.75, 0) {};
+		\node [style=none] (15) at (2.75, 0) {};
+		\node [style=none] (16) at (4.75, 0) {};
+		\node [style=none] (17) at (3.75, -1) {};
+		\node [style=none] (18) at (3.75, -1.5) {$\rho_2$};
+		\node [style=dot, color=red, fill=red, inner sep=0.05cm] (19) at (5.75, 0) {};
+		\node [style=none] (20) at (4.75, 0) {};
+		\node [style=none] (21) at (6.75, 0) {};
+		\node [style=none] (22) at (5.75, -1) {};
+		\node [style=none] (23) at (5.75, -1.5) {$\rho_3$};
+		\node [style=dot, color=red, fill=red, inner sep=0.05cm] (24) at (7.75, 0) {};
+		\node [style=none] (25) at (6.75, 0) {};
+		\node [style=none] (26) at (8.75, 0) {};
+		\node [style=none] (27) at (7.75, -1) {};
+		\node [style=none] (28) at (7.75, -1.5) {$\rho_4$};
+		\node [style=dot, color=red, fill=red, inner sep=0.05cm] (29) at (9.75, 0) {};
+		\node [style=none] (30) at (8.75, 0) {};
+		\node [style=none] (32) at (9.75, -1) {};
+		\node [style=none] (33) at (9.75, -1.5) {$\rho_5$};
+		\node [style=none] (34) at (0.5, 0) {$=$};
+		\node [style=none] (35) at (-8.5, 0) {$T_{\rho_1 \rho_2 \rho_3 \rho_4 \rho_5}$};
+		\node [style=none] (36) at (-6.5, 0) {$=$};
+		\node [style=none] (37) at (-3, 0) {$A_{\mu}^{\rho_1} A_{\mu \nu}^{\rho_1} A_{\nu \sigma}^{\rho_1} A_{\sigma \xi}^{\rho_1} A_{\xi}^{\rho_1}$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (5) to (8.center);
+		\draw (5) to (7.center);
+		\draw (15.center) to (14);
+		\draw (14) to (17.center);
+		\draw (14) to (16.center);
+		\draw (20.center) to (19);
+		\draw (19) to (22.center);
+		\draw (19) to (21.center);
+		\draw (25.center) to (24);
+		\draw (24) to (27.center);
+		\draw (24) to (26.center);
+		\draw (30.center) to (29);
+		\draw (29) to (32.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

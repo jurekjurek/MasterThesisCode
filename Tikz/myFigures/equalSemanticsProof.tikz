@@ -1,0 +1,18 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-4, 1) {};
+		\node [style=white dot] (1) at (-4, 0.25) {};
+		\node [style=white dot] (2) at (-4, -1.25) {};
+		\node [style=none] (3) at (-4, -2) {};
+		\node [style=none] (4) at (-2.5, -0.5) {$=$};
+		\node [style=none] (5) at (-1.5, 0.5) {};
+		\node [style=none] (6) at (-1.5, -1.5) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (0.center) to (1);
+		\draw [bend left=45] (1) to (2);
+		\draw (3.center) to (2);
+		\draw [bend right=45] (1) to (2);
+		\draw (6.center) to (5.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

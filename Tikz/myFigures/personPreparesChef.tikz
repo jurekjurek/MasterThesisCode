@@ -1,0 +1,68 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (0.5, 1) {};
+		\node [style=none] (1) at (2.5, 1) {};
+		\node [style=none] (2) at (1.5, 2) {};
+		\node [style=none] (3) at (1.5, 1) {};
+		\node [style=none] (4) at (1.5, -0.25) {$N$};
+		\node [style=none] (5) at (1.5, 0.25) {};
+		\node [style=none] (6) at (1.5, 3) {\texttt{Person}};
+		\node [style=none] (7) at (3.5, 1) {};
+		\node [style=none] (8) at (5.5, 1) {};
+		\node [style=none] (9) at (4.5, 2) {};
+		\node [style=none] (10) at (4.5, 1) {};
+		\node [style=none] (11) at (4.5, -0.25) {$N$};
+		\node [style=none] (12) at (4.5, 0.25) {};
+		\node [style=none] (13) at (4.5, 3) {\texttt{chef}};
+		\node [style=white dot] (14) at (3, -2.08) {};
+		\node [style=none] (15) at (1.5, -0.75) {};
+		\node [style=none] (16) at (4.5, -0.75) {};
+		\node [style=none] (17) at (6.5, 1) {};
+		\node [style=none] (18) at (9.5, 1) {};
+		\node [style=none] (19) at (8, 2.25) {};
+		\node [style=none] (20) at (7, 1) {};
+		\node [style=none] (21) at (8, 1) {};
+		\node [style=none] (22) at (7, 0.25) {};
+		\node [style=none] (23) at (8, 0.25) {};
+		\node [style=none] (24) at (7, -0.25) {$N$};
+		\node [style=none] (25) at (8, -0.25) {$S$};
+		\node [style=none] (26) at (8, 3) {\texttt{prepares}};
+		\node [style=none] (27) at (7, -0.75) {};
+		\node [style=none] (28) at (8, -0.75) {};
+		\node [style=none] (29) at (3, -3.25) {};
+		\node [style=none] (30) at (7.5, -3.75) {};
+		\node [style=none] (31) at (3, -3.25) {};
+		\node [style=none] (32) at (7, -3.75) {};
+		\node [style=none] (33) at (8, -6.25) {};
+		\node [style=none] (34) at (11.5, 3) {\texttt{\ldots}};
+		\node [style=upground] (35) at (11.5, 1.5) {};
+		\node [style=none] (36) at (9, 0.25) {};
+		\node [style=none] (37) at (9, -0.75) {};
+		\node [style=none] (38) at (9, -0.25) {$N$};
+		\node [style=none] (39) at (9, 1) {};
+		\node [style=none] (40) at (11.5, -0.75) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=none] (0.center) to (1.center);
+		\draw [style=none] (1.center) to (2.center);
+		\draw [style=none] (2.center) to (0.center);
+		\draw [style=none] (3.center) to (5.center);
+		\draw [style=none] (7.center) to (8.center);
+		\draw [style=none] (8.center) to (9.center);
+		\draw [style=none] (9.center) to (7.center);
+		\draw [style=none] (10.center) to (12.center);
+		\draw [style=none, bend right=90, looseness=1.50] (15.center) to (16.center);
+		\draw [style=none] (17.center) to (18.center);
+		\draw [style=none] (19.center) to (17.center);
+		\draw [style=none] (19.center) to (18.center);
+		\draw [style=none] (20.center) to (22.center);
+		\draw [style=none] (21.center) to (23.center);
+		\draw [style=none, bend right=90, looseness=1.50] (31.center) to (32.center);
+		\draw [style=none] (27.center) to (32.center);
+		\draw [style=none] (31.center) to (14);
+		\draw [style=none] (28.center) to (33.center);
+		\draw (39.center) to (36.center);
+		\draw [bend right=90, looseness=1.25] (37.center) to (40.center);
+		\draw (40.center) to (35);
+	\end{pgfonlayer}
+\end{tikzpicture}

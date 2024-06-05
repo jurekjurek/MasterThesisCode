@@ -1,18 +1,18 @@
 \begin{tikzpicture}
 	\begin{pgfonlayer}{nodelayer}
 		\node [style=kpoint] (0) at (-2.5, -0.5) {$\psi$};
-		\node [style=none] (1) at (-2.5, 0.5) {};
+		\node [style=none] (1) at (-2.5, 0.75) {};
 		\node [style=none] (2) at (-4, -0.25) {$e^{i\alpha}$};
-		\node [style=none] (3) at (0, 0) {$\longmapsto$};
-		\node [style=kpoint] (4) at (6.25, -0.75) {$\psi$};
-		\node [style=kpoint conjugate] (5) at (4.75, -0.75) {$\psi$};
-		\node [style=none] (6) at (4.75, -0.25) {};
-		\node [style=none] (7) at (6.25, -0.25) {};
-		\node [style=none] (8) at (5.25, 0.25) {};
-		\node [style=none] (9) at (5.75, 0.25) {};
-		\node [style=none] (10) at (5.25, 0.75) {};
-		\node [style=none] (11) at (5.75, 0.75) {};
-		\node [style=none] (12) at (2.5, -0.5) {$e^{i\alpha - i \alpha}$};
+		\node [style=none] (3) at (0, -0.25) {$\longmapsto$};
+		\node [style=kpoint] (4) at (6, -0.5) {$\psi$};
+		\node [style=kpoint conjugate] (5) at (4.5, -0.5) {$\psi$};
+		\node [style=none] (6) at (4.5, 0) {};
+		\node [style=none] (7) at (6, 0) {};
+		\node [style=none] (8) at (5, 0.5) {};
+		\node [style=none] (9) at (5.5, 0.5) {};
+		\node [style=none] (10) at (5, 0.75) {};
+		\node [style=none] (11) at (5.5, 0.75) {};
+		\node [style=none] (12) at (2.5, -0.25) {$e^{i\alpha - i \alpha}$};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
 		\draw [style=none] (1.center) to (0);

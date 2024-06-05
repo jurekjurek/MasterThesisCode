@@ -1,0 +1,24 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (7) at (0.5, 0) {};
+		\node [style=none] (8) at (0.5, 0) {};
+		\node [style=none] (10) at (0.5, 0) {};
+		\node [style=none] (11) at (4.5, 0) {};
+		\node [style=none] (12) at (4.5, 0) {};
+		\node [style=none] (14) at (5.5, 0) {$\ldots$};
+		\node [style=hadamard, minimum width=8mm, minimum height=8mm] (19) at (-6.5, 0) {$U_{\texttt{noun}}$};
+		\node [style=none] (20) at (-8.5, 0) {};
+		\node [style=none] (21) at (-4, 0) {};
+		\node [style=none] (23) at (-1.5, 0) {$\mapsto$};
+		\node [style=hadamard] (25) at (-4, 0) {$\not \frown$};
+		\node [style=none] (26) at (5.5, 0.5) {\texttt{discarded}};
+		\node [style=none] (27) at (5.5, -0.5) {\texttt{qubit}};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (11.center) to (12.center);
+		\draw (7.center) to (10.center);
+		\draw [style=none] (20.center) to (19);
+		\draw [style=none] (19) to (21.center);
+		\draw (10.center) to (12.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

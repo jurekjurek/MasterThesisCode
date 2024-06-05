@@ -1,0 +1,27 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-11, 0) {\texttt{Bob}};
+		\node [style=none] (2) at (-3, 0) {\texttt{and}};
+		\node [style=none] (3) at (1, 0) {\texttt{Alice}};
+		\node [style=none] (4) at (7, 0) {\texttt{does too}};
+		\node [style=none] (5) at (-7, 0) {\texttt{drinks tea}};
+		\node [style=none] (6) at (-7, 0.5) {};
+		\node [style=none] (7) at (-4.5, 1) {};
+		\node [style=none] (8) at (-9.5, 1) {};
+		\node [style=none] (9) at (-9.5, 1.75) {\texttt{drinks tea}};
+		\node [style=none] (10) at (-4.5, 1.75) {\texttt{drinks tea}};
+		\node [style=none] (11) at (-9.5, 2.25) {};
+		\node [style=none] (12) at (4, 2.25) {};
+		\node [style=none] (13) at (4, 0.5) {};
+		\node [style=none] (14) at (4, -0.25) {\ldots};
+		\node [style=none] (15) at (5.5, -0.5) {};
+		\node [style=none] (16) at (8.5, 0.5) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [in=-90, out=90, looseness=0.50] (6.center) to (7.center);
+		\draw [in=-90, out=90, looseness=0.50] (6.center) to (8.center);
+		\draw [style=thick, bend left=90, looseness=0.75] (11.center) to (12.center);
+		\draw [style=thickdiredge] (12.center) to (13.center);
+		\draw (15.center) to (16.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

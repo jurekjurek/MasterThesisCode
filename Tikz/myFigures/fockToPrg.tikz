@@ -1,0 +1,30 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (11) at (3.95, 1) {};
+		\node [style=white dot] (12) at (3.95, 0) {};
+		\node [style=none] (13) at (2.45, -1.5) {};
+		\node [style=none] (14) at (3.95, -1.5) {};
+		\node [style=none] (15) at (4.625, -1.25) {$\cdots$};
+		\node [style=none] (16) at (5.45, -1.5) {};
+		\node [style=none] (18) at (5.7, -1.25) {$V$};
+		\node [style=none] (19) at (2.25, -1.25) {$V$};
+		\node [style=none] (20) at (3.5, -1.25) {$V$};
+		\node [style=none] (21) at (4, 2.25) {$v$};
+		\node [style=none] (22) at (4, 1) {};
+		\node [style=none] (23) at (4, 1) {};
+		\node [style=none] (24) at (4.45, 0.5) {$V$};
+		\node [style=none] (25) at (3.25, 1) {};
+		\node [style=none] (26) at (4, 1.75) {};
+		\node [style=none] (27) at (4.75, 1) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=none, in=90, out=-135] (12) to (13.center);
+		\draw [style=none] (12) to (14.center);
+		\draw [style=none, in=90, out=-45] (12) to (16.center);
+		\draw [style=none] (11.center) to (12);
+		\draw (22.center) to (23.center);
+		\draw (25.center) to (26.center);
+		\draw (26.center) to (27.center);
+		\draw (27.center) to (25.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

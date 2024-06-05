@@ -1,0 +1,28 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (0, 3) {};
+		\node [style=none] (1) at (0, 0) {};
+		\node [style=none] (2) at (3, 0) {};
+		\node [style=none] (3) at (-1.5, -1.5) {};
+		\node [style=none] (4) at (0, 3.5) {\texttt{food}};
+		\node [style=none] (5) at (4.25, 0) {\texttt{owner}};
+		\node [style=none] (6) at (-1.75, -2) {\texttt{police}};
+		\node [style=none] (7) at (1.5, 1.25) {};
+		\node [style=none] (8) at (0.75, 1.75) {};
+		\node [style=none] (9) at (-1.75, 0.25) {};
+		\node [style=none] (10) at (-1.75, -0.5) {};
+		\node [style=none, color=blue] (11) at (1, 2.25) {\texttt{cat}};
+		\node [style=none, color=blue] (12) at (2, 1.5) {\texttt{dog}};
+		\node [style=none, color=red] (13) at (-2.75, 0.5) {\texttt{kill}};
+		\node [style=none, color=red] (14) at (-2.75, -0.75) {\texttt{murder}};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=diredge, color=black] (1.center) to (2.center);
+		\draw [style=diredge, color=black] (1.center) to (0.center);
+		\draw [style=diredge, color=black] (1.center) to (3.center);
+		\draw [style=diredge, color=red] (1.center) to (10.center);
+		\draw [style=diredge, color=red] (1.center) to (9.center);
+		\draw [style=diredge, color=blue] (1.center) to (8.center);
+		\draw [style=diredge, color=blue] (1.center) to (7.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

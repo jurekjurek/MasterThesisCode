@@ -1,0 +1,71 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (2, 10) {};
+		\node [style=none] (1) at (8, 10) {};
+		\node [style=none] (2) at (5, 10.75) {$f: A \rightarrow B \quad g: B \rightarrow C$};
+		\node [style=none] (3) at (5, 9.25) {$g\circ f : A \rightarrow C$};
+		\node [style=none] (4) at (-7.25, 10) {};
+		\node [style=none] (5) at (-1.25, 10) {};
+		\node [style=none] (6) at (-4.25, 10.75) {};
+		\node [style=none] (7) at (-4.25, 9.25) {$1_A : A \rightarrow A$};
+		\node [style=none] (8) at (-10.25, 6) {};
+		\node [style=none] (9) at (-4.25, 6) {};
+		\node [style=none] (10) at (-7.25, 6.75) {$f: \Diamond A \rightarrow B$};
+		\node [style=none] (11) at (-7.25, 5.25) {$\triangledown f : A \rightarrow \square B$};
+		\node [style=none] (12) at (-2.75, 6) {};
+		\node [style=none] (13) at (3.25, 6) {};
+		\node [style=none] (14) at (0.25, 6.75) {$f:  A \otimes B \rightarrow C$};
+		\node [style=none] (15) at (0.25, 5.25) {$\triangleright f : A \rightarrow C/ B$};
+		\node [style=none] (16) at (4.75, 6) {};
+		\node [style=none] (17) at (10.75, 6) {};
+		\node [style=none] (18) at (7.75, 6.75) {$f:  A \otimes B \rightarrow C$};
+		\node [style=none] (19) at (7.75, 5.25) {$\triangleleft f : B \rightarrow A\backslash C$};
+		\node [style=none] (20) at (-10.25, 2) {};
+		\node [style=none] (21) at (-4.25, 2) {};
+		\node [style=none] (22) at (-7.25, 2.75) {$g: A \rightarrow \square B$};
+		\node [style=none] (23) at (-7.25, 1.25) {$\triangledown^{-1} g : \Diamond A \rightarrow B$};
+		\node [style=none] (24) at (-2.75, 2) {};
+		\node [style=none] (25) at (3.25, 2) {};
+		\node [style=none] (26) at (0.25, 2.75) {$g: A \rightarrow C / B$};
+		\node [style=none] (27) at (0.25, 1.25) {$\triangleright^{-1} g : A \otimes B \rightarrow C$};
+		\node [style=none] (28) at (4.75, 2) {};
+		\node [style=none] (29) at (10.75, 2) {};
+		\node [style=none] (30) at (7.75, 2.75) {$g: B \rightarrow  A \backslash C$};
+		\node [style=none] (31) at (7.75, 1.25) {$\triangleleft^{-1} g : A\otimes B \rightarrow C$};
+		\node [style=none] (32) at (-9, -2) {};
+		\node [style=none] (33) at (-1, -2) {};
+		\node [style=none] (34) at (-5, -1.25) {$f: (A \otimes B) \otimes C \rightarrow D$};
+		\node [style=none] (35) at (-5, -2.75) {$\widehat{\alpha^{-1}}(f): A \otimes (B \otimes C) \rightarrow D$};
+		\node [style=none] (36) at (1.5, -2) {};
+		\node [style=none] (37) at (9, -2) {};
+		\node [style=none] (38) at (5.25, -1.5) {$f: A \otimes (B \otimes C) \rightarrow D$};
+		\node [style=none] (39) at (5.25, -2.75) {$\widehat{\alpha}(f): (A \otimes B) \otimes C \rightarrow D$};
+		\node [style=none] (40) at (-13, -6) {};
+		\node [style=none] (41) at (-7, -6) {};
+		\node [style=none] (42) at (-10, -5.25) {$f: \Diamond A \otimes A \rightarrow B$};
+		\node [style=none] (43) at (-10, -6.75) {$\hat{C}(f): A \rightarrow B$};
+		\node [style=none] (44) at (-5.75, -6) {};
+		\node [style=none] (45) at (3, -6) {};
+		\node [style=none] (46) at (-1.25, -5.25) {$f: A \otimes (\Diamond B \otimes C) \rightarrow D$};
+		\node [style=none] (47) at (-1.25, -6.75) {$\widehat{M}(f): (\Diamond B \otimes A) \otimes C \rightarrow D$};
+		\node [style=none] (48) at (5.5, -6) {};
+		\node [style=none] (49) at (14, -6) {};
+		\node [style=none] (50) at (9.75, -5.25) {$f: \Diamond A \otimes (\Diamond B \otimes C) \rightarrow D$};
+		\node [style=none] (51) at (9.75, -6.75) {$\widehat{S}(f): \Diamond B \otimes (\Diamond A \otimes C) \rightarrow D$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (0.center) to (1.center);
+		\draw (4.center) to (5.center);
+		\draw (8.center) to (9.center);
+		\draw (12.center) to (13.center);
+		\draw (16.center) to (17.center);
+		\draw (20.center) to (21.center);
+		\draw (24.center) to (25.center);
+		\draw (28.center) to (29.center);
+		\draw (32.center) to (33.center);
+		\draw (36.center) to (37.center);
+		\draw (40.center) to (41.center);
+		\draw (44.center) to (45.center);
+		\draw (48.center) to (49.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

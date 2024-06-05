@@ -7,7 +7,7 @@ from qiskit.circuit import Parameter
 from qiskit import QuantumCircuit, QuantumRegister
 from qiskit.converters import dag_to_circuit, circuit_to_dag
 
-def SetUpDiags(circuit: QuantumCircuit, parameterDict: dict, WordsToForget: list = ['woman', 'person', 'meal'], oneQubit = True, show: bool = True):
+def SetUpDiags(circuit: QuantumCircuit, parameterDict: dict, WordsToForget: list = ['woman', 'person', 'meal'], oneQubit = True, traceOutInsteadOfMeasure:bool = True, show: bool = True):
     '''
     Given a circuit as an Input, we remove the noun parameters belonging to the first noun in the sentence. 
 
@@ -30,6 +30,22 @@ def SetUpDiags(circuit: QuantumCircuit, parameterDict: dict, WordsToForget: list
         print(circuit)
 
 
+    # first, figure out the qubit the sentence is encoded on 
+    measuredQubits = []
+    for i in range(len(circuitData)):
+            if str(circuitData[i].operation.name) == 'measure':
+                measuredQubits.append(circuitData[i].qubits[0].index)
+
+    qubitList = list(range(circuit.num_qubits))
+    for qubit in qubitList:
+        if qubit not in measuredQubits: 
+            sentenceQubit = qubit 
+            break 
+
+
+    print('we determined the sentencqubit to be: ', sentenceQubit)
+
+
     # list to store the nounParameters to be removed 
     indexList = []
 
@@ -46,7 +62,7 @@ def SetUpDiags(circuit: QuantumCircuit, parameterDict: dict, WordsToForget: list
 
                 print('we forget the following word: ', word)
 
-                qubitOfInterest = circuitData[i].qubits[0].index
+                nounQubit = circuitData[i].qubits[0].index
 
                 if '†' in str(circuitData[i].operation.params):
                     dagger = True 
@@ -66,7 +82,9 @@ def SetUpDiags(circuit: QuantumCircuit, parameterDict: dict, WordsToForget: list
         # print(parameterDict[str(params[i])])
         print(params[i])
         if str(params[i]) in parameterDict:
-            circuit = circuit.assign_parameters({params[i]: (parameterDict[str(params[i])]/(2*np.pi))})
+
+            print('DEBUGDEBUGDEBUGDEBUG,  if we put in parameter ', parameterDict[str(params[i])], 'for the label: ', str(params[i]))
+            circuit = circuit.assign_parameters({params[i]: (parameterDict[str(params[i])])})#/(2*np.pi))})
         else: 
             print('TESTSETESTSETS')
             # if the model only learned parameters for the word that are not daggered
@@ -82,7 +100,7 @@ def SetUpDiags(circuit: QuantumCircuit, parameterDict: dict, WordsToForget: list
                     tempParam = tempParam[::-1]
                     print(tempParam)             
 
-                    circuit = circuit.assign_parameters({params[i]: -(parameterDict[tempParam]/(2*np.pi))}) 
+                    circuit = circuit.assign_parameters({params[i]: -(parameterDict[tempParam])})#/(2*np.pi))}) 
                 if oneQubit == False:
                     tempParam = str(params[i])
                     # reverse string 
@@ -94,21 +112,24 @@ def SetUpDiags(circuit: QuantumCircuit, parameterDict: dict, WordsToForget: list
                     tempParam = tempParam[::-1]
                     print(tempParam)             
 
-                    circuit = circuit.assign_parameters({params[i]: (parameterDict[tempParam]/(2*np.pi))}) 
+                    circuit = circuit.assign_parameters({params[i]: (parameterDict[tempParam])})#/(2*np.pi))}) 
 
     if show: 
-        print('Circuit wiht new parameters: ')
+        print('Circuit with new parameters: ')
         print(circuit)
     
 
-    # remove the parameters of the words we want to forget
-    circuit.data.pop(indexList[0])
-    circuit.data.pop(indexList[1]-1)
-    circuit.data.pop(indexList[2]-2)
+    if len(indexList) != 0: 
+        # remove the parameters of the words we want to forget
+        circuit.data.pop(indexList[0])
+        circuit.data.pop(indexList[1]-1)
+        circuit.data.pop(indexList[2]-2)
 
     if show: 
         print('circuit with removed words to forget: ')
         print(circuit)
+
+
 
 
     # if the word we want to forget about is an effect, we simply forget about the qubit 
@@ -119,7 +140,7 @@ def SetUpDiags(circuit: QuantumCircuit, parameterDict: dict, WordsToForget: list
         for i in range(len(circuitData)):
 
             if str(circuitData[i].operation.name) == 'measure': 
-                if circuitData[i].qubits[0].index == qubitOfInterest: 
+                if circuitData[i].qubits[0].index == nounQubit: 
 
                     # remove measurement
                     circuit.data.pop(i)
@@ -127,6 +148,7 @@ def SetUpDiags(circuit: QuantumCircuit, parameterDict: dict, WordsToForget: list
         
         # that's it 
         
+    
 
     # if the word we want to forget about is a state, we introduce a bell state and clip it to the beginning of the circuit 
     if not dagger: 
@@ -135,8 +157,12 @@ def SetUpDiags(circuit: QuantumCircuit, parameterDict: dict, WordsToForget: list
         # bell state on first two qubits 
         bellCircuit.h(0)
 
+        # both noun and sentencequbit move up one position, since we add a qubit in position 0
+        nounQubit = nounQubit + 1
+        sentenceQubit = sentenceQubit + 1
+
         # entangle the artificial qubit with the qubit of interest
-        bellCircuit.cx(0,qubitOfInterest + 1)
+        bellCircuit.cx(0,nounQubit)
 
         # now, add one 'artificial' qubit to the initial circuit 
         q = QuantumRegister(1, 'q')
@@ -149,6 +175,11 @@ def SetUpDiags(circuit: QuantumCircuit, parameterDict: dict, WordsToForget: list
 
         # now, we have our circuit 
 
+
+
+
+
+
     if show: 
         print('circuit with discarded qubit: ')
         print(circuit)
@@ -156,7 +187,61 @@ def SetUpDiags(circuit: QuantumCircuit, parameterDict: dict, WordsToForget: list
     circuit.draw(output= 'mpl', filename='testtest.png')
 
 
-    return circuit, not dagger
+
+    # remove the measurements and just trace over the corresponding later 
+    if traceOutInsteadOfMeasure: 
+        circuitData = circuit.data
+
+        i = len(circuitData) - 1
+
+        traceList = []
+        # for i in range(len(circuitData)):
+        #     if str(circuitData[i].operation.name) == 'measure':
+        #         traceList.append(circuitData[i].qubits[0].index)
+
+        while i >= 0: 
+            if str(circuitData[i].operation.name) == 'measure': 
+                print('removed measurement. ')
+
+                # if traceList over all -2 qubits 
+                # traceList.append(circuitData[i].qubits[0].index)
+                del circuit.data[i]
+            i -= 1
+
+        # if tracelist over all -1 qubits 
+        nQ = circuit.num_qubits
+        # traceList = [x for x in range(nQ) if x != sentenceQubit]
+
+        # if dagger, we did not add anything, so we encode the meaning of the sentence on the 4x4 density matrix on the noun and sentence wire 
+        if dagger: 
+            traceList = [x for x in range(nQ) if (x != sentenceQubit and x != nounQubit)]
+
+        # if not dagger, we have a bell circuit and the open qubit wire is in qubit 0s position 
+        elif not dagger: 
+            # bell added 
+            traceList = [x for x in range(1, nQ) if x != sentenceQubit]
+
+        print('trace out instead of measure, circuit is: ')
+        print(circuit)
+        print('And traceList is: ', traceList)
+
+
+    
+
+
+    if len(indexList) == 0: 
+        print('nothing to remove.')
+
+        # if nothing was to remove, nothing is going to be added, so addedQubit: bool = False
+        return circuit, False
+
+
+    if dagger:
+        qubitToTraceOut = [nounQubit]
+    if not dagger: 
+        qubitToTraceOut = [0]
+
+    return circuit, not dagger, traceList, qubitToTraceOut
 
 
 from lambeq import BobcatParser
@@ -178,26 +263,29 @@ from qiskit.visualization import plot_state_city
 
 
 
-def GetDensityMatrix(circuit: QuantumCircuit, traceList: list, addedQubit: bool):
+def GetDensityMatrix(circuit: QuantumCircuit, traceList: list, addedQubit: bool, traceOutInsteadOfMeasure: bool, qubitToTraceOut):
     '''
     Given a QuantumCircuit representing a sentence, this function returns the density matrix of the *sentence* qubit 
     ''' 
     import qiskit.quantum_info as qi 
-    from qiskit.providers.aer import AerSimulator
+    # from qiskit.providers.aer import AerSimulator
     
-    dmSimulation = AerSimulator()
+    # dmSimulation = AerSimulator()
 
-    job = dmSimulation.run(circuit.decompose(reps = 1))
+    # job = dmSimulation.run(circuit.decompose(reps = 1))
 
 
 
-    result = job.result()
+    # result = job.result()
 
-    # print(result)
+    # # print(result)
 
-    data = result.data()
+    # data = result.data()
 
-    rho = data.get('density_matrix')
+    # rho = data.get('density_matrix')
+
+    rho = DensityMatrix(circuit)
+
 
     # print('CIRCUIT IN DENSITY MATRIX')
     # print(circuit)
@@ -215,13 +303,54 @@ def GetDensityMatrix(circuit: QuantumCircuit, traceList: list, addedQubit: bool)
     # elif circuit.num_qubits == 3: 
     #     sentenceDM = partial_trace(state=rho, qargs=[0,2])
 
-    if not addedQubit:
-        sentenceDM = partial_trace(state=rho, qargs= traceList)
-    if addedQubit: 
-        traceList = [i+1 for i in traceList]
-        traceList.insert(0,0)
-        # print('modified tracelist if appended:', traceList)
-        sentenceDM = partial_trace(state=rho, qargs= traceList)
+
+
+    '''
+    I commented this out!!! 
+    '''
+
+    print('debug, shape density matrix: ', rho)
+
+    print('Debug Debug', traceList)
+    print(circuit)
+
+    # if not addedQubit:
+    #     sentenceDM = partial_trace(state=rho, qargs= traceList)
+    # if addedQubit: 
+    #     traceList = [i+1 for i in traceList]
+    #     traceList.insert(0,0)
+    #     # print('modified tracelist if appended:', traceList)
+    #     sentenceDM = partial_trace(state=rho, qargs= traceList)
+
+
+    '''
+    I commented this out!! 
+    '''
+
+
+    # tracing out... 
+    tracedOutRho = partial_trace(state = rho, qargs= qubitToTraceOut)
+
+    print('we measure traceList before tracing out: ', traceList)
+
+    # create new tracelist, because it has shifted due to the tracing out
+    for i in range(len(traceList)): 
+        if traceList[i] > qubitToTraceOut[0]:
+            traceList[i] = traceList[i]-1
+
+    print('we traced out ', qubitToTraceOut, ' and now we measure the traceList ', traceList)
+
+
+    sentenceDM = tracedOutRho.measure(traceList)[1]
+
+    # try tracing out all other qubits after measuring 
+    traceList.append(qubitToTraceOut[0])
+
+    print('we trace out: ', traceList)
+
+   
+
+    
 
     # else: 
     #     print('number of qubits: ', circuit.num_qubits)
@@ -233,7 +362,7 @@ def GetDensityMatrix(circuit: QuantumCircuit, traceList: list, addedQubit: bool)
 now for the application of the code
 '''
 
-def Main(listOfCircuits: list, parameterDict: dict, wordsToForget: list):
+def Main(listOfCircuits: list, parameterDict: dict, wordsToForget: list, traceOutInsteadOfMeasure: bool = False):
     '''
     Iterate over all circuits in the test_circuits list and for each of them create the density matrix as explained above 
     ''' 
@@ -261,21 +390,30 @@ def Main(listOfCircuits: list, parameterDict: dict, wordsToForget: list):
         # if i == 8: 
         #     print(tempCircQiskit)
 
-        circuitData = tempCircQiskit.data
+        # circuitData = tempCircQiskit.data
 
+        
+
+        alteredTempCirc, addedQubit, traceList, qubitToTraceOut = SetUpDiags(tempCircQiskit, parameterDict, wordsToForget, traceOutInsteadOfMeasure)
+
+        
+
+
+        # tracelist is list of qubits that we trace over. These are the qubits that are measured in the circuit 
         # list of qubits that shall be forgotten when traced over
-        traceList = []
-        for i in range(len(circuitData)):
-            if str(circuitData[i].operation.name) == 'measure':
-                traceList.append(circuitData[i].qubits[0].index)
+        # traceList = []
+        # circuitData = alteredTempCirc.data
+        # for i in range(len(circuitData)):
+        #     if str(circuitData[i].operation.name) == 'measure':
+        #         traceList.append(circuitData[i].qubits[0].index)
         # print('traceList: ', traceList)
 
-        alteredTempCirc, addedQubit = SetUpDiags(tempCircQiskit, parameterDict, wordsToForget)
 
-        # to access density matrix later on 
-        alteredTempCirc.save_density_matrix() 
+        # to access density matrix later on ONLY FOR AER SIMULATOR
+        # alteredTempCirc.save_density_matrix() 
 
-        densityMatrix = GetDensityMatrix(alteredTempCirc, traceList, addedQubit) 
+
+        densityMatrix = GetDensityMatrix(alteredTempCirc, traceList, addedQubit, traceOutInsteadOfMeasure, qubitToTraceOut) 
         
         listOfDensityMatrices.append(densityMatrix)
 

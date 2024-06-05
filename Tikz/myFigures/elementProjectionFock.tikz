@@ -1,0 +1,20 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=element] (1) at (2.25, 1.5) {$v$};
+		\node [style=new style 0] (2) at (2.25, -0.5) {$p_n$};
+		\node [style=none] (3) at (0.75, -2.25) {};
+		\node [style=none] (4) at (2.25, -2.25) {};
+		\node [style=none] (5) at (2.925, -2) {$\cdots$};
+		\node [style=none] (6) at (3.75, -2.25) {};
+		\node [style=none] (12) at (2.75, 0.65) {$V$};
+		\node [style=none] (14) at (4, -2) {$V$};
+		\node [style=none] (18) at (0.55, -2) {$V$};
+		\node [style=none] (19) at (1.8, -2) {$V$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=downArrow, in=90, out=-135] (2) to (3.center);
+		\draw [style=downArrow] (2) to (4.center);
+		\draw [style=downArrow, in=90, out=-45] (2) to (6.center);
+		\draw [style=thickArr] (1) to (2);
+	\end{pgfonlayer}
+\end{tikzpicture}

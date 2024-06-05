@@ -190,7 +190,7 @@
 
 % \tikzstyle{point}=[regular polygon,regular polygon sides=3,draw,inner sep=-0.65pt,minimum width=8mm,fill=white,regular polygon rotate=180]
 % \tikzstyle{copoint}=[regular polygon,regular polygon sides=3,draw,inner sep=-0.65pt,minimum width=8mm,fill=white]
-\tikzstyle{point}=[regular polygon,regular polygon sides=3,draw,scale=0.75,inner sep=-0.5pt,minimum width=9mm,fill=white,regular polygon rotate=180]
+\tikzstyle{point}=[regular polygon,regular polygon sides=3,draw,scale=0.75,inner sep=-1pt,minimum width=9mm, minimum height=4mm,fill=white,regular polygon rotate=180]
 \tikzstyle{copoint}=[regular polygon,regular polygon sides=3,draw,scale=0.75,inner sep=-0.5pt,minimum width=9mm,fill=white]
 \tikzstyle{dpoint}=[point,doubled]
 \tikzstyle{dcopoint}=[copoint,doubled]
@@ -393,8 +393,8 @@
 % ========================
 
 
- \tikzstyle{upground}=[circuit ee IEC,thick,ground,rotate=90,scale=2.7]
- \tikzstyle{downground}=[circuit ee IEC,thick,ground,rotate=-90,scale=2.5]
+\tikzstyle{upground}=[circuit ee IEC,thick,ground,rotate=90,scale=2.7]
+\tikzstyle{downground}=[circuit ee IEC,thick,ground,rotate=-90,scale=2.5]
 %\tikzstyle{ground}=[regular polygon,regular polygon sides=3,draw=gray,scale=0.50,inner sep=-0.5pt,minimum width=5mm,fill=gray]
 \tikzstyle{bigground}=[regular polygon,regular polygon sides=3,draw=gray,scale=0.50,inner sep=-0.5pt,minimum width=10mm,fill=gray]
 %\tikzstyle{grounddag}=[regular polygon,regular polygon sides=3,draw=gray,scale=0.50,inner sep=-0.5pt,minimum width=5mm,fill=gray,regular polygon rotate=180]

@@ -1,0 +1,55 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (1) at (-10, 3.25) {$np$};
+		\node [style=none] (2) at (-5, 3.25) {$(np \backslash np) / (s / \Diamond \square np)$};
+		\node [style=none] (3) at (-10, 4.25) {\texttt{Humans}};
+		\node [style=none] (5) at (-5, 4.25) {\texttt{whom}};
+		\node [style=none] (6) at (2, 4.25) {\texttt{animals}};
+		\node [style=none] (7) at (7, 4.25) {\texttt{eat}};
+		\node [style=none] (8) at (2, 3.25) {$np$};
+		\node [style=none] (9) at (7, 3.25) {$(np\backslash s) / np$};
+		\node [style=none] (15) at (-10, 2.75) {};
+		\node [style=none] (16) at (-5, 2.75) {};
+		\node [style=none] (18) at (2, 2.75) {};
+		\node [style=none] (19) at (7, 2.75) {};
+		\node [white dot] (20) at (-5, 1) {\scriptsize$\, / \,$};
+		\node [white dot] (21) at (2, 1) {\scriptsize$\, / \,$};
+		\node [white dot] (22) at (0.75, -0.75) {\scriptsize$\, \backslash \,$};
+		\node [white dot] (23) at (-7.25, -1) {\scriptsize$\, \backslash \,$};
+		\node [gray dot] (24) at (2, -5.75) {\scriptsize$\, \backslash \,$};
+		\node [style=none] (25) at (-10, -2) {};
+		\node [style=none] (26) at (-8.25, -2) {};
+		\node [style=none] (27) at (-2, -4.75) {};
+		\node [style=none] (28) at (-2, -1) {};
+		\node [style=none] (29) at (4, 0) {};
+		\node [style=none] (30) at (7, 0) {};
+		\node [style=none] (31) at (2.75, -2) {};
+		\node [style=none] (32) at (2.75, -4.25) {};
+		\node [white dot] (33) at (-0.25, -2.75) {\scriptsize$\, \square \,$};
+		\node [gray dot] (34) at (-0.25, -4.5) {\scriptsize$\, \Diamond \,$};
+		\node [style=none] (35) at (-6, -5.75) {};
+		\node [style=none] (36) at (-5.5, -5.5) {$np$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [bend right=90, looseness=1.25] (25.center) to (26.center);
+		\draw (25.center) to (15.center);
+		\draw [style=diredge, bend left=45] (26.center) to (23);
+		\draw [style=diredge, bend right=45] (20) to (23);
+		\draw [style=diredge] (16.center) to (20);
+		\draw [in=-90, out=-105, looseness=1.50] (24) to (27.center);
+		\draw (27.center) to (28.center);
+		\draw [style=diredge, in=360, out=90, looseness=0.75] (28.center) to (20);
+		\draw (30.center) to (19.center);
+		\draw [bend right=90] (29.center) to (30.center);
+		\draw [style=diredge, in=15, out=90, looseness=1.25] (29.center) to (21);
+		\draw [style=diredge] (18.center) to (21);
+		\draw [style=diredge, bend right] (21) to (22);
+		\draw [bend left=60, looseness=0.75] (22) to (31.center);
+		\draw (31.center) to (32.center);
+		\draw [style=diredge, bend left, looseness=1.25] (32.center) to (24);
+		\draw [style=diredge, bend right=315, looseness=1.25] (24) to (34);
+		\draw [style=diredge] (34) to (33);
+		\draw [style=diredge, bend left] (33) to (22);
+		\draw [style=diredge, bend left=15] (23) to (35.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

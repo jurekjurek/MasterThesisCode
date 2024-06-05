@@ -1,0 +1,5 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (2) at (0, 0) {$A \otimes B$};
+	\end{pgfonlayer}
+\end{tikzpicture}

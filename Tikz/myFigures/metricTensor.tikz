@@ -1,0 +1,15 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-6, 2) {};
+		\node [style=none] (1) at (-4, 2) {};
+		\node [style=none] (2) at (-5, 0.25) {$g^{\mu \nu}$};
+		\node [style=none] (3) at (-3, 3) {The metric tensor};
+		\node [style=none] (4) at (0, 1) {};
+		\node [style=none] (5) at (-2, 1) {};
+		\node [style=none] (6) at (-1, 0.25) {$g_{\mu \nu}$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [bend right=90, looseness=1.75] (0.center) to (1.center);
+		\draw [bend right=90, looseness=1.75] (4.center) to (5.center);
+	\end{pgfonlayer}
+\end{tikzpicture}
