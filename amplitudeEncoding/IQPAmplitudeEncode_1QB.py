@@ -146,10 +146,10 @@ class CircuitAnsatz(BaseAnsatz):
             # for rot, nounParam in zip(cycle(self.single_qubit_rotations), self.nounParams): 
             #     circuit >>= rot(nounParam)
 
-            if 'sauce' in str(syms[0]) or 'meal' in str(syms[0]) or 'dinner' in str(syms[0]):
+            if 'sauce' in str(syms[0]) or 'meal' in str(syms[0]) or 'dinner' in str(syms[0]) or 'chef' in str(syms[0]):
                 circuit >>= Ry(0)
                 print('we choose the paramter 0 for the symbol: ', str(syms[0]))
-            elif 'program' in str(syms[0]) or 'application' in str(syms[0]) or 'software' in str(syms[0]):
+            elif 'program' in str(syms[0]) or 'application' in str(syms[0]) or 'software' in str(syms[0]) or 'programmer' in str(syms[0]):
                 if '†' in str(syms[0]):
                     circuit >>= Ry(-np.pi)
                 else: 

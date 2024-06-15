@@ -7,7 +7,7 @@ from qiskit.circuit import Parameter
 from qiskit import QuantumCircuit, QuantumRegister
 from qiskit.converters import dag_to_circuit, circuit_to_dag
 
-def SetUpDiags(circuit: QuantumCircuit, parameterDict: dict, WordsToForget: list = ['woman', 'person', 'meal'], oneQubit = True, traceOutInsteadOfMeasure:bool = True, show: bool = True):
+def SetUpDiags(circuit: QuantumCircuit, parameterDict: dict, amplitudeEncoded: bool, WordsToForget: list = ['woman', 'person', 'meal'], oneQubit = True, traceOutInsteadOfMeasure:bool = True, show: bool = True):
     '''
     Given a circuit as an Input, we remove the noun parameters belonging to the first noun in the sentence. 
 
@@ -54,8 +54,12 @@ def SetUpDiags(circuit: QuantumCircuit, parameterDict: dict, WordsToForget: list
 
     for i in range(len(circuitData)): 
 
+        if 'programmer' in str(circuitData[i].operation.params) and 'program' in WordsToForget: 
+            continue
+
         # check if this gate has a parameter of a word we want to forget about
         for word in WordsToForget:
+            
             if word in str(circuitData[i].operation.params):
                 # store the parameter in a list
                 indexList.append(i)
@@ -75,6 +79,7 @@ def SetUpDiags(circuit: QuantumCircuit, parameterDict: dict, WordsToForget: list
     # get parameters of the remaining circuit 
     params = circuit.parameters
 
+    print('AMPLITUDE ENCODING IS: ', amplitudeEncoded)
 
     # set the parameters of the remaining words based on the models weights 
     for i in range(len(params)):
@@ -85,6 +90,40 @@ def SetUpDiags(circuit: QuantumCircuit, parameterDict: dict, WordsToForget: list
 
             print('DEBUGDEBUGDEBUGDEBUG,  if we put in parameter ', parameterDict[str(params[i])], 'for the label: ', str(params[i]))
             circuit = circuit.assign_parameters({params[i]: (parameterDict[str(params[i])])})#/(2*np.pi))})
+
+        # else: 
+        #     '''
+        #     assign the parameter ... 
+        #     '''
+
+
+        elif amplitudeEncoded: 
+
+            print('AEAEAEAEAEAEAEA!!!')
+            if 'man' in str(params[i]) or 'woman' in str(params[i]) or 'person' in str(params[i]):
+
+                # if 1 in params, this means that it is the x gate in between the z gates 
+
+                if '†' in str(params[i]) and '0' in str(params[i]): 
+                    circuit = circuit.assign_parameters({params[i]: -np.pi/2})
+                elif '1' in str(params[i]):
+                    circuit = circuit.assign_parameters({params[i]: np.pi/2})
+                elif '0' in str(params[i]): 
+                    circuit = circuit.assign_parameters({params[i]: np.pi/2})
+                else: 
+                    circuit = circuit.assign_parameters({params[i]: 0})
+            
+            elif 'software' in str(params[i]) or 'application' in str(params[i]) or 'program' in str(params[i]) or 'programmer' in str(params[i]): 
+                if '0' in str(params[i]):
+                    circuit = circuit.assign_parameters({params[i]: np.pi})
+                else: 
+                    circuit = circuit.assign_parameters({params[i]: 0})
+
+            elif 'meal' in str(params[i]) or 'sauce' in str(params[i]) or 'dinner' in str(params[i]) or 'chef' in str(params[i]): 
+                circuit = circuit.assign_parameters({params[i]: 0})
+
+
+        # probably unnecesary
         else: 
             print('TESTSETESTSETS')
             # if the model only learned parameters for the word that are not daggered
@@ -100,7 +139,7 @@ def SetUpDiags(circuit: QuantumCircuit, parameterDict: dict, WordsToForget: list
                     tempParam = tempParam[::-1]
                     print(tempParam)             
 
-                    circuit = circuit.assign_parameters({params[i]: -(parameterDict[tempParam])})#/(2*np.pi))}) 
+                    circuit = circuit.assign_parameters({params[i]: (parameterDict[tempParam])})#/(2*np.pi))}) 
                 if oneQubit == False:
                     tempParam = str(params[i])
                     # reverse string 
@@ -341,7 +380,18 @@ def GetDensityMatrix(circuit: QuantumCircuit, traceList: list, addedQubit: bool,
     print('we traced out ', qubitToTraceOut, ' and now we measure the traceList ', traceList)
 
 
-    sentenceDM = tracedOutRho.measure(traceList)[1]
+    measureList = tracedOutRho.measure(traceList)
+
+
+    print('the list of measurements or whatever: ', measureList)
+    # while '1' in measureList[0]: 
+    #     # print('how often does this repeat itself?')
+    #     print(measureList[0])
+    #     print('iteration')
+    #     measureList = tracedOutRho.measure(traceList)
+
+
+    sentenceDM = measureList[1]
 
     # try tracing out all other qubits after measuring 
     traceList.append(qubitToTraceOut[0])
@@ -362,7 +412,7 @@ def GetDensityMatrix(circuit: QuantumCircuit, traceList: list, addedQubit: bool,
 now for the application of the code
 '''
 
-def Main(listOfCircuits: list, parameterDict: dict, wordsToForget: list, traceOutInsteadOfMeasure: bool = False):
+def Main(listOfCircuits: list, parameterDict: dict, wordsToForget: list, amplitudeEncoded: bool, traceOutInsteadOfMeasure: bool = False):
     '''
     Iterate over all circuits in the test_circuits list and for each of them create the density matrix as explained above 
     ''' 
@@ -394,7 +444,7 @@ def Main(listOfCircuits: list, parameterDict: dict, wordsToForget: list, traceOu
 
         
 
-        alteredTempCirc, addedQubit, traceList, qubitToTraceOut = SetUpDiags(tempCircQiskit, parameterDict, wordsToForget, traceOutInsteadOfMeasure)
+        alteredTempCirc, addedQubit, traceList, qubitToTraceOut = SetUpDiags(tempCircQiskit, parameterDict, amplitudeEncoded, wordsToForget, traceOutInsteadOfMeasure)
 
         
 
@@ -410,7 +460,7 @@ def Main(listOfCircuits: list, parameterDict: dict, wordsToForget: list, traceOu
 
 
         # to access density matrix later on ONLY FOR AER SIMULATOR
-        # alteredTempCirc.save_density_matrix() 
+        # alteredTempCirc.save_density_matrix(conditional = True) 
 
 
         densityMatrix = GetDensityMatrix(alteredTempCirc, traceList, addedQubit, traceOutInsteadOfMeasure, qubitToTraceOut) 

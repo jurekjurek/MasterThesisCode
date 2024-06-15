@@ -1,0 +1,13 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (3) at (-5, 0) {};
+		\node [style=none] (4) at (-5.75, 0) {\large $\ket{0}$};
+		\node [style=hadamard, minimum width=6mm, minimum height=6mm] (104) at (-3, 0) {$R_X(\theta_1)$};
+		\node [style=hadamard, minimum width=6mm, minimum height=6mm] (105) at (-0.25, 0) {$R_Z(\theta_2)$};
+		\node [style=hadamard, minimum width=6mm, minimum height=6mm] (106) at (2.5, 0) {$R_X(\theta_3)$};
+		\node [style=none] (107) at (4.5, 0) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (3.center) to (107.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

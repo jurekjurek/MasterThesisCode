@@ -1,0 +1,39 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (1.25, 1.5) {};
+		\node [style=none] (1) at (7.25, 1.5) {};
+		\node [style=none] (2) at (0.5, 1.5) {\large $\ket{0}$};
+		\node [style=none] (3) at (7.25, 1.5) {};
+		\node [style=none] (4) at (12.75, 1.5) {};
+		\node [style=none] (5) at (1.25, -0.5) {};
+		\node [style=none] (6) at (7.25, -0.5) {};
+		\node [style=none] (7) at (0.5, -0.5) {\large $\ket{0}$};
+		\node [style=none] (8) at (7.25, -0.5) {};
+		\node [style=none] (9) at (13.75, 1.5) {};
+		\node [style=none] (10) at (6.25, -0.5) {};
+		\node [style=none] (11) at (8, -0.5) {};
+		\node [style=vertex] (12) at (5.5, -0.5) {};
+		\node [style=none] (13) at (8, -0.5) {};
+		\node [style=none] (14) at (13.5, 1.5) {};
+		\node [style=none] (15) at (12.75, 1.5) {};
+		\node [style=none] (16) at (13.5, -0.5) {};
+		\node [style=hadamard, minimum width=6mm, minimum height=6mm] (17) at (3, -0.5) {$R_Y(\theta_1)$};
+		\node [style=hadamard, minimum width=6mm, minimum height=6mm] (19) at (7.75, -0.5) {$X$};
+		\node [style=none] (21) at (13.5, 1.5) {};
+		\node [style=hadamard, minimum width=6mm, minimum height=6mm] (23) at (5.5, 1.5) {$R_Y(\theta_2)$};
+		\node [style=none] (25) at (10.75, -0.5) {};
+		\node [style=vertex] (26) at (10, -0.5) {};
+		\node [style=hadamard, minimum width=6mm, minimum height=6mm] (27) at (10, 1.5) {$R_Y(\theta_2)$};
+		\node [style=hadamard, minimum width=6mm, minimum height=6mm] (28) at (12.25, -0.5) {$X$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (4.center) to (9.center);
+		\draw [in=180, out=0] (5.center) to (8.center);
+		\draw (13.center) to (12);
+		\draw (12) to (16.center);
+		\draw (0.center) to (14.center);
+		\draw (8.center) to (10.center);
+		\draw (12) to (23);
+		\draw (26) to (27);
+	\end{pgfonlayer}
+\end{tikzpicture}
