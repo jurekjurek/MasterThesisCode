@@ -394,19 +394,36 @@ def GetDensityMatrix(circuit: QuantumCircuit, traceList: list, addedQubit: bool,
     sentenceDM = measureList[1]
 
     # try tracing out all other qubits after measuring 
-    traceList.append(qubitToTraceOut[0])
+    # traceList.append(qubitToTraceOut[0])
 
     print('we trace out: ', traceList)
 
    
 
+
+    # let's take a small detour to compare the resulting density matrix to the correct pure density matrix of the corresponding category 
+    from qiskit.quantum_info import state_fidelity
+
+    iTMatrix = np.array([[1,0], [0,0]])
+    foodMatrix = np.array([[0,0], [0,1]])
+    iTDM = DensityMatrix(iTMatrix)
+    foodDM = DensityMatrix(foodMatrix)
+
     
+    # the dm that captures the meaning of the sentence on only the sentence qubit (making it 2-dim)
+    sentenceDMOneQubit = partial_trace(sentenceDM, traceList)
+
+    listOfFidelities = [state_fidelity(sentenceDMOneQubit, foodDM) , state_fidelity(sentenceDMOneQubit, iTDM)]
+
+    
+
+    print('sentence dm one qubit is: ', sentenceDMOneQubit)
 
     # else: 
     #     print('number of qubits: ', circuit.num_qubits)
     #     print(circuit)
 
-    return sentenceDM
+    return sentenceDM, listOfFidelities
 
 '''
 now for the application of the code
@@ -463,13 +480,13 @@ def Main(listOfCircuits: list, parameterDict: dict, wordsToForget: list, amplitu
         # alteredTempCirc.save_density_matrix(conditional = True) 
 
 
-        densityMatrix = GetDensityMatrix(alteredTempCirc, traceList, addedQubit, traceOutInsteadOfMeasure, qubitToTraceOut) 
+        densityMatrix, dmOneQubit = GetDensityMatrix(alteredTempCirc, traceList, addedQubit, traceOutInsteadOfMeasure, qubitToTraceOut) 
         
         listOfDensityMatrices.append(densityMatrix)
 
         numQubitsList.append(tempCircQiskit.num_qubits)
 
-    return listOfDensityMatrices, numQubitsList
+    return listOfDensityMatrices, numQubitsList, dmOneQubit
     
 
 
