@@ -15,6 +15,10 @@
 		\node [style=none, color=blue] (12) at (2, 1.5) {\texttt{dog}};
 		\node [style=none, color=red] (13) at (-2.75, 0.5) {\texttt{kill}};
 		\node [style=none, color=red] (14) at (-2.75, -0.75) {\texttt{murder}};
+		\node [style=none] (16) at (1.5, 1) {};
+		\node [style=none] (17) at (1.5, -0.75) {};
+		\node [style=none] (18) at (0, 0) {};
+		\node [style=none] (19) at (1.5, -0.75) {};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
 		\draw [style=diredge, color=black] (1.center) to (2.center);
@@ -24,5 +28,7 @@
 		\draw [style=diredge, color=red] (1.center) to (9.center);
 		\draw [style=diredge, color=blue] (1.center) to (8.center);
 		\draw [style=diredge, color=blue] (1.center) to (7.center);
+		\draw [style=dashed, color=blue] (16.center) to (17.center);
+		\draw [style=dashed, color=blue] (18.center) to (19.center);
 	\end{pgfonlayer}
 \end{tikzpicture}

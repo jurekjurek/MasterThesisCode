@@ -1,0 +1,75 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-3.25, 2) {};
+		\node [style=none] (1) at (-4, 2) {\large $\ket{\psi}$};
+		\node [style=none] (3) at (-3.25, 0) {};
+		\node [style=none] (4) at (-4, 0) {\large $\ket{0}$};
+		\node [style=none] (6) at (-3.25, -2) {};
+		\node [style=none] (7) at (-4, -2) {\large $\ket{0}$};
+		\node [style=none] (8) at (-2, -2) {};
+		\node [style=none] (9) at (-2, 0) {};
+		\node [style=none] (13) at (-6.75, -2) {\texttt{Bob}};
+		\node [style=none] (14) at (-6.75, 1) {\texttt{Alice}};
+		\node [style=none] (15) at (-5, 1) {\large  $\Biggl\{$};
+		\node [style=none] (20) at (-2, 0.5) {};
+		\node [style=none] (21) at (-2, -2.5) {};
+		\node [style=none] (22) at (1, -2.5) {};
+		\node [style=none] (23) at (1, 0.5) {};
+		\node [style=none] (24) at (1, -2) {};
+		\node [style=none] (25) at (11, -2) {};
+		\node [style=none] (26) at (2.5, 0) {};
+		\node [style=none] (27) at (1, 0) {};
+		\node [style=none] (28) at (-0.5, -0.5) {\texttt{Bell}};
+		\node [style=none] (29) at (-0.5, -1.5) {\texttt{state}};
+		\node [style=none] (30) at (2.5, 2) {};
+		\node [style=none] (31) at (2.5, 0) {};
+		\node [style=none] (32) at (2.5, 2) {};
+		\node [style=none] (33) at (2.5, 2.5) {};
+		\node [style=none] (34) at (2.5, -0.5) {};
+		\node [style=none] (35) at (7, -0.5) {};
+		\node [style=none] (36) at (7, 2.5) {};
+		\node [style=none] (37) at (7, 0) {};
+		\node [style=none] (38) at (7, 2) {};
+		\node [style=none] (39) at (4.75, 1.5) {\texttt{Bell}};
+		\node [style=none] (40) at (4.75, 0.75) {\texttt{measurement}};
+		\node [style=none] (41) at (8.25, 0) {};
+		\node [style=none] (42) at (10, 2) {};
+		\node [style=none] (43) at (7, 1.75) {};
+		\node [style=none] (44) at (9.5, 1.75) {};
+		\node [style=none] (45) at (7, -0.25) {};
+		\node [style=none] (46) at (7.75, -0.25) {};
+		\node [style=none] (47) at (7.75, -1.5) {};
+		\node [style=none] (48) at (8.25, -1.5) {};
+		\node [style=none] (49) at (10, -1.5) {};
+		\node [style=none] (50) at (9.5, -1.5) {};
+		\node [style=hadamard, minimum width=6mm, minimum height=6mm] (51) at (8, -2) {\large $Z$};
+		\node [style=hadamard, minimum width=6mm, minimum height=6mm] (52) at (9.75, -2) {\large $X$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (6.center) to (8.center);
+		\draw (21.center) to (8.center);
+		\draw (21.center) to (22.center);
+		\draw (22.center) to (24.center);
+		\draw (24.center) to (23.center);
+		\draw (23.center) to (20.center);
+		\draw (20.center) to (8.center);
+		\draw (24.center) to (25.center);
+		\draw (3.center) to (9.center);
+		\draw (27.center) to (26.center);
+		\draw (0.center) to (30.center);
+		\draw (34.center) to (31.center);
+		\draw (34.center) to (35.center);
+		\draw (35.center) to (37.center);
+		\draw (37.center) to (36.center);
+		\draw (36.center) to (33.center);
+		\draw (33.center) to (31.center);
+		\draw (37.center) to (41.center);
+		\draw (42.center) to (38.center);
+		\draw (45.center) to (46.center);
+		\draw (46.center) to (47.center);
+		\draw (48.center) to (41.center);
+		\draw (44.center) to (50.center);
+		\draw (49.center) to (42.center);
+		\draw (43.center) to (44.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

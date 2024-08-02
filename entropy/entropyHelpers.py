@@ -393,6 +393,9 @@ def GetDensityMatrix(circuit: QuantumCircuit, traceList: list, addedQubit: bool,
 
     sentenceDM = measureList[1]
 
+    print('sentence DM is, after tracing out:')
+    print(sentenceDM)
+
     # try tracing out all other qubits after measuring 
     # traceList.append(qubitToTraceOut[0])
 
@@ -423,7 +426,7 @@ def GetDensityMatrix(circuit: QuantumCircuit, traceList: list, addedQubit: bool,
     #     print('number of qubits: ', circuit.num_qubits)
     #     print(circuit)
 
-    return sentenceDM, listOfFidelities
+    return sentenceDMOneQubit, listOfFidelities
 
 '''
 now for the application of the code

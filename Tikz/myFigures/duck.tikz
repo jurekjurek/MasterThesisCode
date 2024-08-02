@@ -3,7 +3,6 @@
 		\node [style=white dot] (0) at (-10.5, 0.25) {};
 		\node [style=none] (1) at (-11.5, -0.75) {};
 		\node [style=none] (2) at (-9.5, -0.75) {};
-		\node [style=none] (3) at (-10.5, 1.25) {};
 		\node [style=none] (4) at (-10.5, -0.75) {};
 		\node [style=none] (5) at (-11.5, -1.25) {$N$};
 		\node [style=none] (6) at (-10.5, -1.25) {$N$};
@@ -20,7 +19,6 @@
 		\node [style=none] (17) at (-5, 0) {$=$};
 		\node [style=white dot] (18) at (-3, 0.25) {};
 		\node [style=none] (19) at (-4, -0.75) {};
-		\node [style=none] (21) at (-3, 1.25) {};
 		\node [style=none] (22) at (-3, -0.75) {};
 		\node [style=none] (23) at (-4, -1.25) {$N$};
 		\node [style=none] (24) at (-3, -1.25) {$N$};
@@ -37,7 +35,6 @@
 		\node [style=white dot] (39) at (6.75, 0.25) {};
 		\node [style=none] (40) at (5.75, -0.75) {};
 		\node [style=none] (41) at (7.75, -0.75) {};
-		\node [style=none] (42) at (6.75, 1.25) {};
 		\node [style=none] (44) at (5.75, -1.25) {$N$};
 		\node [style=none] (46) at (7.75, -1.25) {$N$};
 		\node [style=none] (47) at (10.25, 1) {};
@@ -71,7 +68,6 @@
 		\node [style=none] (75) at (-11.5, -2.5) {};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
-		\draw (3.center) to (0);
 		\draw [bend right=45] (0) to (1.center);
 		\draw [bend left=45] (0) to (2.center);
 		\draw (4.center) to (0);
@@ -80,7 +76,6 @@
 		\draw [style=none] (8.center) to (10.center);
 		\draw (12.center) to (11.center);
 		\draw [bend right=90] (16.center) to (13.center);
-		\draw (21.center) to (18);
 		\draw [bend right=45] (18) to (19.center);
 		\draw (22.center) to (18);
 		\draw [style=none] (28.center) to (27.center);
@@ -89,7 +84,6 @@
 		\draw [bend left=45] (18) to (34.center);
 		\draw (34.center) to (35.center);
 		\draw (38.center) to (36.center);
-		\draw (42.center) to (39);
 		\draw [bend right=45] (39) to (40.center);
 		\draw [bend left=45] (39) to (41.center);
 		\draw [style=none] (49.center) to (48.center);

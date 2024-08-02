@@ -1,0 +1,34 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (19) at (0, -1) {};
+		\node [style=none] (20) at (10, -1) {};
+		\node [style=none] (21) at (5, 3) {};
+		\node [style=none] (31) at (2.5, -1) {};
+		\node [style=mapadj, minimum height=1mm] (40) at (6.75, 0.25) {\texttt{Alice}};
+		\node [style=maptrans, minimum height=1mm] (41) at (3.25, 0.25) {\texttt{Alice}};
+		\node [style=none] (42) at (5, -1) {};
+		\node [style=none] (43) at (5, -3) {};
+		\node [style=none] (44) at (-6, -1) {};
+		\node [style=none] (45) at (-2.5, -1) {};
+		\node [style=none] (46) at (-4.25, 0.5) {};
+		\node [style=none] (47) at (-4.25, -2) {};
+		\node [style=none] (48) at (-4.25, -1) {};
+		\node [style=none] (49) at (-4.25, -0.5) {\texttt{Alice}};
+		\node [style=none] (50) at (-3, 0) {};
+		\node [style=none] (51) at (1.5, 1) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=dashed] (19.center) to (20.center);
+		\draw [style=dashed] (20.center) to (21.center);
+		\draw [style=dashed] (21.center) to (19.center);
+		\draw [style=doubled] (43.center) to (42.center);
+		\draw [in=-90, out=90, looseness=0.75] (42.center) to (40);
+		\draw [in=-90, out=90, looseness=0.75] (42.center) to (41);
+		\draw [bend left=90, looseness=1.25] (41) to (40);
+		\draw (44.center) to (46.center);
+		\draw (46.center) to (45.center);
+		\draw (45.center) to (44.center);
+		\draw [style=doubled] (47.center) to (48.center);
+		\draw [style=diredge, bend right=45] (51.center) to (50.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

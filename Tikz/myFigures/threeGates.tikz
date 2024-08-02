@@ -1,21 +1,21 @@
 \begin{tikzpicture}
 	\begin{pgfonlayer}{nodelayer}
-		\node [style=none] (18) at (-5.5, 0) {};
-		\node [style=none] (19) at (-2.5, 0) {};
-		\node [style=none] (21) at (-1.5, 0) {};
-		\node [style=none] (22) at (1.5, 0) {};
-		\node [style=none] (24) at (2.5, 0) {};
-		\node [style=none] (25) at (5.5, 0) {};
-		\node [style=hadamard, minimum width=8mm, minimum height=8mm] (26) at (-4, 0) {\large $X$};
-		\node [style=hadamard, minimum width=8mm, minimum height=8mm] (27) at (0, 0) {\large $Y$};
-		\node [style=hadamard, minimum width=8mm, minimum height=8mm] (28) at (4, 0) {\large $Z$};
+		\node [style=hadamard, minimum width=7mm, minimum height=6mm] (29) at (-4.5, 0) { $X$};
+		\node [style=none] (30) at (-6, 0) {};
+		\node [style=none] (31) at (-3, 0) {};
+		\node [style=hadamard, minimum width=7mm, minimum height=6mm] (32) at (1.5, 0) { $Y$};
+		\node [style=none] (33) at (0, 0) {};
+		\node [style=none] (34) at (3, 0) {};
+		\node [style=hadamard, minimum width=7mm, minimum height=6mm] (35) at (7.5, 0) { $Z$};
+		\node [style=none] (36) at (6, 0) {};
+		\node [style=none] (37) at (9, 0) {};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
-		\draw (18.center) to (26);
-		\draw (26) to (19.center);
-		\draw (21.center) to (27);
-		\draw (27) to (22.center);
-		\draw (24.center) to (28);
-		\draw (28) to (25.center);
+		\draw (30.center) to (29);
+		\draw (29) to (31.center);
+		\draw (33.center) to (32);
+		\draw (32) to (34.center);
+		\draw (36.center) to (35);
+		\draw (35) to (37.center);
 	\end{pgfonlayer}
 \end{tikzpicture}

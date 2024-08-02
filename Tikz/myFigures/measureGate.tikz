@@ -2,10 +2,10 @@
 	\begin{pgfonlayer}{nodelayer}
 		\node [style=none] (2) at (-1.5, 0) {};
 		\node [style=none] (3) at (1.5, 0) {};
-		\node [style=hadamard, minimum width=8mm, minimum height=8mm] (4) at (0, 0) {\large $\not \frown$};
+		\node [style=hadamard, minimum width=6mm, minimum height=6mm] (5) at (0, 0) {$\not \frown$};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
-		\draw (2.center) to (4);
-		\draw (4) to (3.center);
+		\draw (5) to (2.center);
+		\draw (5) to (3.center);
 	\end{pgfonlayer}
 \end{tikzpicture}

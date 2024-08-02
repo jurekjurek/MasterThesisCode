@@ -1,0 +1,27 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (1) at (-1.25, 0.75) {};
+		\node [style=none] (2) at (-0.75, 0.75) {};
+		\node [style=white dot] (3) at (-1.75, 0.25) {};
+		\node [style=none] (4) at (-0.75, -0.5) {};
+		\node [style=none] (5) at (-2.75, -0.5) {};
+		\node [style=none] (6) at (-2.75, 0.75) {};
+		\node [style=none] (7) at (-1.75, -0.5) {};
+		\node [style=none] (8) at (-2.25, 0.75) {};
+		\node [style=none] (9) at (-5.75, 0.5) {\texttt{and}};
+		\node [style=none] (10) at (-4, 0.5) {$=$};
+		\node [style=none] (16) at (5, 0.25) {};
+		\node [style=none] (18) at (6.25, 0.25) {};
+		\node [style=none] (19) at (1.75, 0.5) {\texttt{it}};
+		\node [style=none] (20) at (3.5, 0.5) {$=$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=none] (2.center) to (4.center);
+		\draw [style=none, bend left=90, looseness=1.75] (6.center) to (8.center);
+		\draw [style=none, bend left=90, looseness=1.75] (1.center) to (2.center);
+		\draw [style=none, bend right=90, looseness=1.75] (8.center) to (1.center);
+		\draw [style=none] (6.center) to (5.center);
+		\draw (3) to (7.center);
+		\draw [style=none, bend left=90, looseness=1.75] (16.center) to (18.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

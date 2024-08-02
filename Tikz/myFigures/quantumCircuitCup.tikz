@@ -1,0 +1,23 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (1) at (4.5, -2.25) {};
+		\node [style=hadamard, minimum width=6mm, minimum height=6mm] (2) at (4.75, -2.25) {$\not \frown$};
+		\node [style=hadamard, minimum width=6mm, minimum height=6mm] (3) at (2.75, -2.25) {$\not \frown$};
+		\node [style=hadamard, minimum width=6mm, minimum height=6mm] (4) at (2.75, -0.75) { $H$};
+		\node [style=vertex] (5) at (2.75, 0.5) {};
+		\node [style=none] (6) at (4.75, 0.5) {$\bigoplus$};
+		\node [style=none] (7) at (2.75, 2) {};
+		\node [style=none] (8) at (4.75, 2) {};
+		\node [style=none] (9) at (-3.75, 0) {};
+		\node [style=none] (10) at (-1.75, 0) {};
+		\node [style=none] (11) at (0, 0) {$=$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (5) to (6.center);
+		\draw (5) to (3);
+		\draw (6.center) to (2);
+		\draw (7.center) to (5);
+		\draw (8.center) to (6.center);
+		\draw [bend right=90, looseness=1.50] (9.center) to (10.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

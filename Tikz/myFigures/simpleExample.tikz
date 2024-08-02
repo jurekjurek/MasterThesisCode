@@ -23,6 +23,9 @@
 		\node [style=none] (42) at (5.5, -2) {};
 		\node [style=hadamard, minimum width=7mm, minimum height=6mm] (44) at (3, -2) { $O_2$};
 		\node [style=none] (45) at (5.25, 2) {\ldots};
+		\node [style=none] (46) at (-7.75, 2) {\texttt{q}$_3$};
+		\node [style=none] (47) at (-7.75, 0) {\texttt{q}$_2$};
+		\node [style=none] (48) at (-7.75, -2) {\texttt{q}$_1$};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
 		\draw (20.center) to (28.center);

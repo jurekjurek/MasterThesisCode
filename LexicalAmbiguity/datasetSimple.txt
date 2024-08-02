@@ -1,0 +1,2 @@
+1	men are hungry	
+0	pancakes are hungry 	

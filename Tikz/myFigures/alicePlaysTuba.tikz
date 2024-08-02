@@ -42,7 +42,7 @@
 		\node [style=none] (39) at (5.75, -4.5) {\texttt{plays}};
 		\node [style=none] (40) at (2.5, -4.5) {\texttt{Alice}};
 		\node [style=none] (41) at (5, -2.75) {};
-		\node [style=none] (42) at (2.75, -2.75) {};
+		\node [style=none] (42) at (2.5, -2.75) {};
 		\node [style=none] (43) at (9, -2.75) {};
 		\node [style=none] (44) at (9, -2.75) {};
 		\node [style=none] (45) at (6.5, -2.75) {};

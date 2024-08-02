@@ -1,11 +1,18 @@
 \begin{tikzpicture}
 	\begin{pgfonlayer}{nodelayer}
-		\node [style=gray dot] (0) at (0.5, 0.5) {};
-		\node [style=none] (1) at (-0.5, -0.5) {};
-		\node [style=none] (2) at (0.5, -0.5) {};
-		\node [style=white dot] (4) at (-0.5, 0.5) {};
-		\node [style=none] (5) at (-0.5, 1.5) {};
-		\node [style=none] (6) at (0.5, 1.5) {};
+		\node [style=gray dot] (0) at (-1.75, 0.75) {};
+		\node [style=none] (1) at (-3.25, -0.5) {};
+		\node [style=none] (2) at (-1.75, -0.5) {};
+		\node [style=white dot] (4) at (-3.25, 0.25) {};
+		\node [style=none] (5) at (-3.25, 1.5) {};
+		\node [style=none] (6) at (-1.75, 1.5) {};
+		\node [style=none] (7) at (0, 0.5) {$=$};
+		\node [style=gray dot] (8) at (3, 0.25) {};
+		\node [style=none] (9) at (1.5, -0.5) {};
+		\node [style=none] (10) at (3, -0.5) {};
+		\node [style=white dot] (11) at (1.5, 0.75) {};
+		\node [style=none] (12) at (1.5, 1.5) {};
+		\node [style=none] (13) at (3, 1.5) {};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
 		\draw [none] (4) to (0);
@@ -13,5 +20,10 @@
 		\draw [none] (5.center) to (4);
 		\draw [none] (6.center) to (0);
 		\draw [none] (4) to (1.center);
+		\draw [none] (11) to (8);
+		\draw [none] (8) to (10.center);
+		\draw [none] (12.center) to (11);
+		\draw [none] (13.center) to (8);
+		\draw [none] (11) to (9.center);
 	\end{pgfonlayer}
 \end{tikzpicture}

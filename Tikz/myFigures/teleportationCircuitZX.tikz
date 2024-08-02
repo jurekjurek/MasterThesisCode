@@ -1,0 +1,77 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-6, 2) {};
+		\node [style=none] (1) at (-6.75, 2) {\large $\ket{\psi}$};
+		\node [style=none] (8) at (-9.5, -2) {\texttt{Bob}};
+		\node [style=none] (9) at (-9.5, 1) {\texttt{Alice}};
+		\node [style=none] (10) at (-7.75, 1) {\large  $\Biggl\{$};
+		\node [style=none] (11) at (-5, 0) {};
+		\node [style=none] (12) at (-5, -2) {};
+		\node [style=white dot, minimum width=5mm] (13) at (-2.75, 0) {};
+		\node [style=gray dot, minimum width=5mm] (14) at (-2.75, 2) {};
+		\node [style=gray dot, minimum width=5mm] (15) at (1.25, 2) {$\alpha \pi$};
+		\node [style=gray dot, minimum width=5mm] (16) at (1.25, 0) {$\beta \pi$};
+		\node [style=hadamard, minimum width=6mm, minimum height=6mm] (17) at (-0.75, 0) {\large $H$};
+		\node [style=gray dot, minimum width=5mm] (18) at (0.25, -2) {$\alpha \pi$};
+		\node [style=white dot, minimum width=5mm] (20) at (-1.75, -2) {$\beta \pi$};
+		\node [style=none] (21) at (1.5, -2) {};
+		\node [style=none] (22) at (-5.75, 0.75) {\tiny $1/\sqrt(2)$};
+		\node [style=none] (23) at (4.25, 0) {$=$};
+		\node [style=none] (24) at (11, 2) {};
+		\node [style=none] (25) at (10.25, 2) {\large $\ket{\psi}$};
+		\node [style=none] (26) at (7.5, -2) {\texttt{Bob}};
+		\node [style=none] (27) at (7.5, 1) {\texttt{Alice}};
+		\node [style=none] (28) at (9.25, 1) {\large  $\Biggl\{$};
+		\node [style=none] (29) at (12, 0) {};
+		\node [style=none] (30) at (12, -2) {};
+		\node [style=white dot, minimum width=5mm] (31) at (14.25, 0) {$\beta \pi$};
+		\node [style=gray dot, minimum width=5mm] (32) at (14.25, 2) {$\alpha \pi$};
+		\node [style=gray dot, minimum width=5mm] (36) at (17.25, -2) {$\alpha \pi$};
+		\node [style=white dot, minimum width=5mm] (37) at (15.25, -2) {$\beta \pi$};
+		\node [style=none] (38) at (18.5, -2) {};
+		\node [style=none] (40) at (-8.5, -8.25) {$=$};
+		\node [style=none] (41) at (-2.25, -6.25) {};
+		\node [style=none] (42) at (-3, -6.25) {\large $\ket{\psi}$};
+		\node [style=none] (43) at (-5.75, -10.25) {\texttt{Bob}};
+		\node [style=none] (44) at (-5.75, -7.25) {\texttt{Alice}};
+		\node [style=none] (45) at (-4, -7.25) {\large  $\Biggl\{$};
+		\node [style=white dot, minimum width=5mm] (48) at (0.25, -8.25) {$2 \beta \pi$};
+		\node [style=gray dot, minimum width=5mm] (49) at (-1, -6.25) {$\alpha \pi$};
+		\node [style=gray dot, minimum width=5mm] (50) at (1.25, -10.25) {$\alpha \pi$};
+		\node [style=none] (52) at (3.25, -10.25) {};
+		\node [style=none] (54) at (4, -8.25) {$=$};
+		\node [style=none] (55) at (10.5, -6.25) {};
+		\node [style=none] (56) at (9.75, -6.25) {\large $\ket{\psi}$};
+		\node [style=none] (57) at (7.25, -10.25) {\texttt{Bob}};
+		\node [style=none] (58) at (7.25, -6.25) {\texttt{Alice}};
+		\node [style=gray dot, minimum width=5mm] (61) at (12.25, -8.25) {$\alpha \pi$};
+		\node [style=none] (63) at (14, -10.25) {};
+		\node [style=none] (64) at (14.75, -10.25) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [bend left=90, looseness=1.75] (12.center) to (11.center);
+		\draw (11.center) to (13);
+		\draw (13) to (17);
+		\draw (17) to (16);
+		\draw (14) to (15);
+		\draw (0.center) to (14);
+		\draw (13) to (14);
+		\draw (12.center) to (20);
+		\draw (20) to (18);
+		\draw (18) to (21.center);
+		\draw [bend left=90, looseness=1.75] (30.center) to (29.center);
+		\draw (29.center) to (31);
+		\draw (24.center) to (32);
+		\draw (31) to (32);
+		\draw (30.center) to (37);
+		\draw (37) to (36);
+		\draw (36) to (38.center);
+		\draw (41.center) to (49);
+		\draw [in=0, out=90, looseness=1.25] (48) to (49);
+		\draw (50) to (52.center);
+		\draw [in=-90, out=180] (50) to (48);
+		\draw [in=90, out=0] (55.center) to (61);
+		\draw [in=180, out=-90] (61) to (63.center);
+		\draw (63.center) to (64.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

@@ -1,11 +1,11 @@
 \begin{tikzpicture}
 	\begin{pgfonlayer}{nodelayer}
-		\node [style=none] (0) at (-1.5, 0) {};
-		\node [style=none] (1) at (1.5, 0) {};
-		\node [style=hadamard, minimum width=8mm, minimum height=8mm] (2) at (0, 0) {\large $S$};
+		\node [style=hadamard, minimum width=6mm, minimum height=6mm] (3) at (0, 0) {\large $S$};
+		\node [style=none] (4) at (-1.5, 0) {};
+		\node [style=none] (5) at (1.5, 0) {};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
-		\draw (0.center) to (2);
-		\draw (2) to (1.center);
+		\draw (4.center) to (3);
+		\draw (5.center) to (3);
 	\end{pgfonlayer}
 \end{tikzpicture}

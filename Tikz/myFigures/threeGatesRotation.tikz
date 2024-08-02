@@ -1,16 +1,16 @@
 \begin{tikzpicture}
 	\begin{pgfonlayer}{nodelayer}
-		\node [style=hadamard, minimum width=12mm, minimum height=8mm] (9) at (-4, -2) {\large $R_X(\theta)$};
-		\node [style=none] (10) at (-5.5, -2) {};
-		\node [style=none] (11) at (-2.5, -2) {};
-		\node [style=none] (12) at (-1.5, -2) {};
-		\node [style=none] (13) at (1.5, -2) {};
-		\node [style=none] (14) at (2.5, -2) {};
-		\node [style=none] (15) at (5.5, -2) {};
-		\node [style=none] (17) at (0, -2) {};
-		\node [style=none] (18) at (4, -2) {};
-		\node [style=hadamard, minimum width=12mm, minimum height=8mm] (19) at (0, -2) {\large $R_Y(\theta)$};
-		\node [style=hadamard, minimum width=12mm, minimum height=8mm] (20) at (4, -2) {\large $R_Z(\theta)$};
+		\node [style=hadamard, minimum width=12mm, minimum height=8mm] (9) at (-10, 0) {\large $R_X(\theta)$};
+		\node [style=none] (10) at (-12, 0) {};
+		\node [style=none] (11) at (-8, 0) {};
+		\node [style=none] (12) at (-2, 0) {};
+		\node [style=none] (13) at (2, 0) {};
+		\node [style=none] (14) at (8, 0) {};
+		\node [style=none] (15) at (12, 0) {};
+		\node [style=none] (17) at (0, 0) {};
+		\node [style=none] (18) at (10, 0) {};
+		\node [style=hadamard, minimum width=12mm, minimum height=8mm] (19) at (0, 0) {\large $R_Y(\theta)$};
+		\node [style=hadamard, minimum width=12mm, minimum height=8mm] (20) at (10, 0) {\large $R_Z(\theta)$};
 	\end{pgfonlayer}
 	\begin{pgfonlayer}{edgelayer}
 		\draw (17.center) to (12.center);

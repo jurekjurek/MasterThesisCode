@@ -1,0 +1,41 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (-8, -2) {};
+		\node [style=dot, inner sep=0.05cm] (1) at (-6.5, 0) {$\alpha$};
+		\node [style=none] (2) at (-8, 2) {};
+		\node [style=none] (3) at (-7, -2) {};
+		\node [style=none] (4) at (-7, 2) {};
+		\node [style=none] (5) at (-5, 2) {};
+		\node [style=none] (6) at (-5, -2) {};
+		\node [style=label] (7) at (-6, 1.5) {$\dots$};
+		\node [style=label] (8) at (-6, -1.5) {$\dots$};
+		\node [style=none] (9) at (-8, -7) {};
+		\node [style=gray dot, inner sep=0.05cm] (10) at (-6.5, -5) {$\alpha$};
+		\node [style=none] (11) at (-8, -3) {};
+		\node [style=none] (12) at (-7, -7) {};
+		\node [style=none] (13) at (-7, -3) {};
+		\node [style=none] (14) at (-5, -3) {};
+		\node [style=none] (15) at (-5, -7) {};
+		\node [style=label] (16) at (-6, -3.5) {$\dots$};
+		\node [style=label] (17) at (-6, -6.5) {$\dots$};
+		\node [style=none] (18) at (-4, 0) {:=};
+		\node [style=none] (19) at (0.75, 0) {};
+		\node [style=none] (20) at (3, 0) {$\ket{0\ldots0}\bra{0\ldots0} + e^{i\alpha} \ket{1\ldots1}\bra{1\ldots1}$};
+		\node [style=none] (21) at (-4, -5) {:=};
+		\node [style=none] (24) at (3, -5) {$\ket{+\ldots+}\bra{+\ldots+} + e^{i\alpha} \ket{-\ldots-}\bra{-\ldots-}$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [in=-144, out=90] (0.center) to (1);
+		\draw [in=-90, out=36] (1) to (5.center);
+		\draw [in=-119, out=90] (3.center) to (1);
+		\draw [in=-36, out=90] (6.center) to (1);
+		\draw [in=-90, out=144] (1) to (2.center);
+		\draw [in=-90, out=119] (1) to (4.center);
+		\draw [in=-144, out=90] (9.center) to (10);
+		\draw [in=-90, out=36] (10) to (14.center);
+		\draw [in=-119, out=90] (12.center) to (10);
+		\draw [in=-36, out=90] (15.center) to (10);
+		\draw [in=-90, out=144] (10) to (11.center);
+		\draw [in=-90, out=119] (10) to (13.center);
+	\end{pgfonlayer}
+\end{tikzpicture}
